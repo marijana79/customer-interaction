@@ -3,121 +3,338 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personas and Value Streams | Customer Interaction</title>
+  <title>Customer Interview Types | Design Team Research Library</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Customer Interaction navigation">
+    <aside class="sidebar" aria-label="Research library navigation">
       <div class="sidebar__inner">
-        <div class="brand" aria-label="Customer Interaction">
-          <span class="brand__mark" aria-hidden="true">CI</span>
+        <div class="brand" aria-label="Design Team Research Library">
+          <span class="brand__mark" aria-hidden="true">DR</span>
           <div>
-            <p class="brand__eyebrow">Open GI</p>
-            <p class="brand__name">Customer Interaction</p>
+            <p class="brand__eyebrow">Design Team</p>
+            <p class="brand__name">Research Library</p>
           </div>
         </div>
 
         <nav class="side-nav" aria-label="Primary">
-          <p class="side-nav__label">Research library</p>
+          <p class="side-nav__label">Topics</p>
           <ul>
             <li>
-              <a class="side-nav__link" href="interviews.html">
-                <span class="side-nav__icon" aria-hidden="true">✦</span>
+              <a class="side-nav__link side-nav__link--active" href="#interviews" aria-current="page">
                 <span>Interviews</span>
               </a>
             </li>
             <li>
-              <a class="side-nav__link side-nav__link--active" href="index.html" aria-current="page" data-nav-item="personas">
-                <span class="side-nav__icon" aria-hidden="true">●</span>
+              <span class="side-nav__link side-nav__link--disabled" aria-disabled="true">
                 <span>Personas</span>
-              </a>
+                <span class="soon-badge">Soon</span>
+              </span>
             </li>
           </ul>
         </nav>
 
         <div class="sidebar-card">
-          <p class="sidebar-card__title">Decision lens</p>
-          <p>Use personas and value streams to connect research evidence to product strategy, journey design, and stakeholder decisions.</p>
+          <p class="sidebar-card__title">Choosing a method</p>
+          <p>Match the conversation type to the decision the team needs to make.</p>
         </div>
       </div>
     </aside>
 
     <main id="main-content" class="main-content">
-      <section class="hero" aria-labelledby="page-title">
+      <section id="interviews" class="hero" aria-labelledby="page-title">
         <div class="hero__content">
-          <p class="eyebrow">Research foundations</p>
-          <h1 id="page-title">Personas and Value Streams</h1>
-          <p class="hero__subtitle">A shared map of the people, motivations, operational pressures, and product opportunities across Open GI’s customer ecosystem.</p>
-          <p class="hero__copy">Designed for product, design, engineering, commercial, and stakeholder conversations, this page links persona needs to the value streams they influence.</p>
-        </div>
-        <div class="hero__panel" aria-label="Personas page summary">
-          <article class="metric-card metric-card--large">
-            <span class="metric-card__value">3</span>
-            <span class="metric-card__label">Value streams</span>
-          </article>
-          <article class="metric-card">
-            <span class="metric-card__value">17</span>
-            <span class="metric-card__label">Personas</span>
-          </article>
-          <article class="metric-card">
-            <span class="metric-card__value">2</span>
-            <span class="metric-card__label">Page views</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="tabs-shell" aria-label="Personas page views">
-        <div class="tabs" role="tablist" aria-label="Choose page view">
-          <button class="tab-button tab-button--active" id="tab-personas" type="button" role="tab" aria-selected="true" aria-controls="panel-personas" data-tab="personas">Personas</button>
-          <button class="tab-button" id="tab-value-streams" type="button" role="tab" aria-selected="false" aria-controls="panel-value-streams" data-tab="value-streams">Value Streams</button>
-        </div>
-      </section>
-
-      <section class="tab-panel tab-panel--active" id="panel-personas" role="tabpanel" aria-labelledby="tab-personas" data-panel="personas">
-        <div class="section-heading section-heading--with-actions">
-          <div>
-            <p class="eyebrow">Persona library</p>
-            <h2>Personas</h2>
-            <p>Personas help us understand the different people involved in customer, technical, operational, and insurance journeys. They give us a shared way to describe user needs, motivations, behaviours, pain points, and decision-making influence across Open GI’s customer ecosystem.</p>
-          </div>
-          <div class="button-group" aria-label="Persona card controls">
-            <button class="button button--secondary" id="expand-all" type="button">Expand all</button>
-            <button class="button button--ghost" id="collapse-all" type="button">Collapse all</button>
+          <p class="eyebrow">Research methods</p>
+          <h1 id="page-title">Customer Interview Types</h1>
+          <p class="hero__subtitle">A practical guide for choosing the right type of customer conversation, depending on the decision we need to make.</p>
+          <div class="hero__copy">
+            <p>As designers, we speak with customers and users for different reasons throughout the product lifecycle. These conversations help us understand real workflows, validate assumptions, identify usability issues, explore future opportunities, and make better product decisions.</p>
+            <p>The term customer interview is often used broadly, but not every customer conversation has the same purpose. Each type has a different goal, timing, format, and expected output. This guide helps designers, product teams, and stakeholders understand when to use each interview type and why it matters.</p>
           </div>
         </div>
-
-        <div class="stream-overview" aria-label="Value stream overview">
-          <article class="overview-card overview-card--acquire">
-            <span class="stream-badge stream-badge--acquire">Acquire</span>
-            <strong>Commercial and technical adoption</strong>
-            <p>Buying confidence, integration quality, compliance, stability, data, and platform value.</p>
-          </article>
-          <article class="overview-card overview-card--distribute">
-            <span class="stream-badge stream-badge--distribute">Distribute</span>
-            <strong>Trading and distribution performance</strong>
-            <p>Product development, quote and bind, broker trust, capacity, underwriting, and ROI.</p>
-          </article>
-          <article class="overview-card overview-card--serve">
-            <span class="stream-badge stream-badge--serve">Serve</span>
-            <strong>Agent and consumer journeys</strong>
-            <p>Self-service, assisted service, payments, documents, accessibility, compliance, and outcomes.</p>
-          </article>
+        <div class="hero__panel" aria-label="Library snapshot">
+          <div class="metric-card metric-card--large">
+            <span class="metric-card__value">9</span>
+            <span class="metric-card__label">Interview types</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">5</span>
+            <span class="metric-card__label">Use principles</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">1</span>
+            <span class="metric-card__label">Decision-first guide</span>
+          </div>
         </div>
-
-        <div id="personas-streams" class="persona-streams" aria-live="polite"></div>
       </section>
 
-      <section class="tab-panel" id="panel-value-streams" role="tabpanel" aria-labelledby="tab-value-streams" data-panel="value-streams" hidden>
+      <section class="summary-section" aria-labelledby="choose-title">
         <div class="section-heading">
-          <p class="eyebrow">Operating model</p>
-          <h2>Value Streams</h2>
-          <p>Value streams help us organise customer and user needs around the outcomes they are trying to achieve. They show how different personas influence commercial, technical, distribution, operational, and consumer experiences across the insurance ecosystem.</p>
+          <p class="eyebrow">Decision guide</p>
+          <h2 id="choose-title">How to choose the right interview type</h2>
+          <p>Start with the decision you need to make. The interview type should match the learning goal, not just the project stage.</p>
         </div>
-        <div id="value-stream-cards" class="value-stream-cards"></div>
+
+        <div class="decision-grid" aria-label="Interview type decision guide">
+          <article class="decision-card">
+            <p>Do we understand the problem?</p>
+            <strong>Customer / User Discovery Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Do we understand how the customer works today?</p>
+            <strong>Current Process / Workflow Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Do we understand what this feature needs to solve?</p>
+            <strong>Feature Discovery Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Does this design direction make sense?</p>
+            <strong>Concept Feedback Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>Can users complete the task successfully?</p>
+            <strong>Usability Testing Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>What do customers think about the current experience?</p>
+            <strong>Customer Feedback Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>Where could we create future value?</p>
+            <strong>Innovation / Future Opportunity Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Is the feature being adopted and delivering value?</p>
+            <strong>Post-release / Adoption Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>How does this connect to customer business goals?</p>
+            <strong>Strategic Customer Interview</strong>
+          </article>
+        </div>
       </section>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-heading section-heading--inline">
+          <div>
+            <p class="eyebrow">Method library</p>
+            <h2 id="library-title">Interview cards</h2>
+          </div>
+          <button class="button" id="toggle-all" type="button">Expand all</button>
+        </div>
+
+        <div class="toolbar" role="search">
+          <label for="card-search">Search interview types</label>
+          <input id="card-search" type="search" placeholder="Search interview types..." autocomplete="off">
+        </div>
+
+        <div class="card-list" id="card-list">
+          <article class="interview-card" data-search-content="Customer / User Discovery Interview Discovery Understand users, their goals, needs, pain points, behaviours, and context before defining a solution. Early in discovery, problem area, new product opportunity, unclear user need. Who users are, what they are trying to achieve, challenges, workarounds, success. How do you currently handle this process? most difficult parts task? what happens when something goes wrong? tools systems use today? what would make this process easier? User needs, pain points, themes, opportunity areas, assumptions, recommendations, real customer problem.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill">Discovery</span>
+                <h3>Customer / User Discovery Interview</h3>
+                <p>Understand users, their goals, needs, pain points, behaviours, and context before defining a solution.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-discovery">
+                <span class="accordion-toggle__text">Expand</span>
+                <span class="chevron" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="accordion-panel" id="panel-discovery">
+              <div class="accordion-panel__inner">
+                <dl class="detail-grid">
+                  <div><dt>Purpose</dt><dd>To understand users, their goals, needs, pain points, behaviours, and context before defining a solution.</dd></div>
+                  <div><dt>When we use it</dt><dd>Early in discovery, when we are exploring a problem area, new product opportunity, or unclear user need.</dd></div>
+                  <div><dt>What we want to learn</dt><dd>Who the users are, what they are trying to achieve, what challenges they face, what workarounds they use, and what success looks like for them.</dd></div>
+                  <div><dt>Typical questions</dt><dd><ul><li>How do you currently handle this process?</li><li>What are the most difficult parts of this task?</li><li>What happens when something goes wrong?</li><li>What tools or systems do you use today?</li><li>What would make this process easier?</li></ul></dd></div>
+                  <div><dt>Output</dt><dd>User needs, pain points, themes, opportunity areas, assumptions to validate, and early design recommendations.</dd></div>
+                  <div><dt>Why it matters</dt><dd>It helps the team understand the real customer problem before jumping into solution design.</dd></div>
+                </dl>
+              </div>
+            </div>
+          </article>
+
+          <article class="interview-card" data-search-content="Current Process / Workflow Interview Workflow Understand how customers currently complete a specific process from start to finish. map existing workflow operational behaviour redesign journey. steps roles tools decision points manual workarounds dependencies exceptions pain points. walk us through today before after involved information decision delays errors exceptions. Journey maps workflow diagrams process maps pain point maps opportunity areas requirements real behaviour actual way of working system view assumptions.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--blue">Workflow</span>
+                <h3>Current Process / Workflow Interview</h3>
+                <p>Understand how customers currently complete a specific process from start to finish.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-workflow"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-workflow"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand how customers currently complete a specific process from start to finish.</dd></div>
+              <div><dt>When we use it</dt><dd>When we need to map an existing workflow, understand operational behaviour, or redesign part of a journey.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Steps in the process, roles involved, tools used, decision points, manual workarounds, dependencies, exceptions, and pain points.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Can you walk us through how you do this today?</li><li>What happens before and after this step?</li><li>Who is involved in this process?</li><li>What information do you need to make a decision?</li><li>Where do delays, errors, or exceptions usually happen?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Journey maps, workflow diagrams, process maps, pain point maps, opportunity areas, and requirements informed by real behaviour.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps the team design around the customer’s actual way of working, not only the system view or internal assumptions.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Feature Discovery Interview Feature discovery Understand the need, value, and context for a specific feature before designing it. feature idea problem solve workflow. why needed who needs it how often outcome expects. What problem would this feature help solve? when use information need action expect valuable not valuable. Feature goals user needs acceptance considerations design principles success criteria risks assumptions internal stakeholder requests.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--purple">Feature discovery</span>
+                <h3>Feature Discovery Interview</h3>
+                <p>Understand the need, value, and context for a specific feature before designing it.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-feature"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-feature"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand the need, value, and context for a specific feature before designing it.</dd></div>
+              <div><dt>When we use it</dt><dd>When a feature idea exists, but we need to better understand the problem it should solve and how it fits into the user’s workflow.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Why the feature is needed, who needs it, what problem it solves, how often the problem occurs, and what outcome the user expects.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What problem would this feature help you solve?</li><li>When would you use it?</li><li>What information would you need to see?</li><li>What action would you expect to take from here?</li><li>What would make this feature valuable or not valuable to you?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Feature goals, user needs, acceptance considerations, design principles, success criteria, and risks or assumptions.</dd></div>
+              <div><dt>Why it matters</dt><dd>It prevents the team from building a feature based only on internal assumptions or stakeholder requests.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Concept Feedback Session Concept validation Get early feedback on a design direction, concept, prototype, or proposed experience before final. wireframes sketches flows concept designs direction makes sense. users understand expectations useful confusing missing. What showing do next useful unclear fit work. Design feedback comprehension issues missing information prioritised improvements confidence proposed direction detailed design development.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--amber">Concept validation</span>
+                <h3>Concept Feedback Session</h3>
+                <p>Get early feedback on a design direction, concept, prototype, or proposed experience before it becomes final.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-concept"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-concept"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To get early feedback on a design direction, concept, prototype, or proposed experience before it becomes final.</dd></div>
+              <div><dt>When we use it</dt><dd>When we have early wireframes, sketches, flows, or concept designs and need to understand whether the direction makes sense.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users understand the concept, whether it matches their expectations, what feels useful, what is confusing, and what may be missing.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What do you think this is showing you?</li><li>What would you do next from here?</li><li>What feels useful or not useful?</li><li>Is anything unclear?</li><li>How well does this fit into the way you work?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Design feedback, comprehension issues, missing information, prioritised improvements, and confidence level in the proposed direction.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps us test the direction early, before too much time is invested in detailed design or development.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Usability Testing Session Usability Evaluate whether users can successfully use a design, prototype, or live feature. clickable flow implemented feature interact complete key tasks stuck misunderstand improved. show complete task click expect happen difficult unclear confident. Usability issues severity ratings task success observations recommendations changes before release useful understandable usable.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--green">Usability</span>
+                <h3>Usability Testing Session</h3>
+                <p>Evaluate whether users can successfully use a design, prototype, or live feature.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-usability"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-usability"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To evaluate whether users can successfully use a design, prototype, or live feature.</dd></div>
+              <div><dt>When we use it</dt><dd>When we have a prototype, clickable flow, or implemented feature that users can interact with.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users can complete key tasks, where they get stuck, what they misunderstand, and what needs to be improved.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Please show us how you would complete this task.</li><li>What would you click next?</li><li>What do you expect to happen here?</li><li>Was anything difficult or unclear?</li><li>How confident would you feel using this?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Usability issues, severity ratings, task success observations, design recommendations, and changes needed before release.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps ensure that what we design is not only useful, but also understandable and usable.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Customer Feedback Session Feedback Gather structured feedback from customers on existing product area live feature recent change satisfaction friction improvement areas. works well does not causes friction customers value improve. how working today use most often difficult inefficient change impact day-to-day work. Feedback themes improvement opportunities product pain points customer sentiment backlog items current product support tickets.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--pink">Feedback</span>
+                <h3>Customer Feedback Session</h3>
+                <p>Gather structured feedback from customers on an existing product area, live feature, or recent change.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-feedback"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-feedback"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To gather structured feedback from customers on an existing product area, live feature, or recent change.</dd></div>
+              <div><dt>When we use it</dt><dd>When we need feedback on something customers already use, or when we want to understand satisfaction, friction, and improvement areas.</dd></div>
+              <div><dt>What we want to learn</dt><dd>What works well, what does not, what causes friction, what customers value, and what they would improve.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>How is this working for you today?</li><li>What do you use most often?</li><li>What feels difficult or inefficient?</li><li>What would you change?</li><li>What impact does this have on your day-to-day work?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Feedback themes, improvement opportunities, product pain points, customer sentiment, and possible backlog items.</dd></div>
+              <div><dt>Why it matters</dt><dd>It gives the team a direct view of customer experience with the current product, rather than relying only on internal opinions or support tickets.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Innovation / Future Opportunity Interview Innovation Explore future-facing needs unmet problems opportunities product innovation beyond feature delivery product workflow market evolve emerging strategic pain points inefficient workflows unmet expectations future goals new value. changing team works problems future wish product help takes too much time perfect process. Future opportunities innovation themes product vision strategic recommendations problem spaces discovery meaningful future value.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--teal">Innovation</span>
+                <h3>Innovation / Future Opportunity Interview</h3>
+                <p>Explore future-facing needs, unmet problems, and opportunities for product innovation.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-innovation"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-innovation"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To explore future-facing needs, unmet problems, and opportunities for product innovation.</dd></div>
+              <div><dt>When we use it</dt><dd>When we are looking beyond immediate feature delivery and exploring where the product, workflow, or market could evolve.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Emerging needs, strategic pain points, inefficient workflows, unmet expectations, future goals, and areas where the product could create new value.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What is changing in the way your team works?</li><li>What problems do you expect to become more important in the future?</li><li>What do you wish the product could help you with?</li><li>What takes too much time today?</li><li>If this process worked perfectly, what would that look like?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Future opportunities, innovation themes, product vision input, strategic recommendations, and problem spaces for further discovery.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps the business think beyond incremental improvements and identify meaningful future value for customers.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Post-release / Adoption Interview Adoption Understand whether a released feature is being used whether delivers value blocking adoption released piloted. users know feature exists use workflow value low high. Have you used feature when use value provide stops using more useful. Adoption insights value validation improvement opportunities usage barriers recommendations iteration successful real use delivered.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--indigo">Adoption</span>
+                <h3>Post-release / Adoption Interview</h3>
+                <p>Understand whether a released feature is being used, whether it delivers value, and what might be blocking adoption.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-adoption"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-adoption"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand whether a released feature is being used, whether it delivers value, and what might be blocking adoption.</dd></div>
+              <div><dt>When we use it</dt><dd>After a feature has been released or piloted with customers.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users know the feature exists, whether they use it, how it fits into their workflow, what value it provides, and why adoption may be low or high.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Have you used this feature?</li><li>When do you use it?</li><li>What value does it provide?</li><li>What stops you from using it?</li><li>What would make it more useful?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Adoption insights, value validation, improvement opportunities, usage barriers, and recommendations for iteration.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps us understand whether the feature is successful in real use, not just whether it was delivered.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Strategic Customer Interview Strategy Understand customer priorities business goals product expectations long-term relationship needs key customers strategic accounts roadmap. business priorities strategic challenges perceived value support goals. main priorities this year support limit goals operational challenges more valuable longer term. Strategic insights account-level themes roadmap input business needs opportunity areas customer business value individual user needs.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--slate">Strategy</span>
+                <h3>Strategic Customer Interview</h3>
+                <p>Understand customer priorities, business goals, product expectations, and long-term relationship needs.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-strategy"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-strategy"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand customer priorities, business goals, product expectations, and long-term relationship needs.</dd></div>
+              <div><dt>When we use it</dt><dd>When working with key customers, strategic accounts, or customers involved in roadmap conversations.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Business priorities, strategic challenges, product expectations, perceived value, and areas where the product could better support their goals.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What are your main priorities this year?</li><li>Where does our product support or limit your goals?</li><li>What are the biggest operational challenges for your team?</li><li>What would make the product more valuable to your business?</li><li>What areas should we be thinking about longer term?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Strategic insights, account-level themes, roadmap input, business needs, and opportunity areas.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps connect product and design decisions to customer business value, not only individual user needs.</dd></div>
+            </dl></div></div>
+          </article>
+        </div>
+
+        <div class="empty-state" id="empty-state" hidden>
+          <h3>No interview types found</h3>
+          <p>Try searching by a category, learning goal, output, or common question.</p>
+        </div>
+      </section>
+
+      <section class="principles-section" aria-labelledby="principles-title">
+        <div class="section-heading">
+          <p class="eyebrow">Good practice</p>
+          <h2 id="principles-title">Principles for using customer interviews well</h2>
+        </div>
+        <div class="principles-grid">
+          <article class="principle-card"><span>01</span><h3>Start with the decision</h3><p>Customer interviews should be tied to a clear decision or learning goal.</p></article>
+          <article class="principle-card"><span>02</span><h3>Do not treat every request as a requirement</h3><p>A single customer request does not automatically become a product requirement, but it may reveal an important underlying need.</p></article>
+          <article class="principle-card"><span>03</span><h3>Understand behaviour, not only opinion</h3><p>What customers say is useful, but what they do, avoid, repeat, or work around is often more important.</p></article>
+          <article class="principle-card"><span>04</span><h3>Document impact</h3><p>Research should show how findings influenced design, product decisions, or next steps.</p></article>
+          <article class="principle-card"><span>05</span><h3>Share evidence clearly</h3><p>Use themes, quotes, examples, screenshots, recordings, or notes to help teams understand the insight.</p></article>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>Design Team Research Library</p>
+      </footer>
     </main>
   </div>
 
