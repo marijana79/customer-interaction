@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Interaction | Design Team Research Library</title>
+  <title>Customer Interview Types | Design Team Research Library</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,14 +24,15 @@
           <p class="side-nav__label">Topics</p>
           <ul>
             <li>
-              <a class="side-nav__link side-nav__link--active" href="#interviews" data-view-link="interviews" aria-current="page">
+              <a class="side-nav__link side-nav__link--active" href="#interviews" aria-current="page">
                 <span>Interviews</span>
               </a>
             </li>
             <li>
-              <a class="side-nav__link" href="#personas" data-view-link="personas">
+              <span class="side-nav__link side-nav__link--disabled" aria-disabled="true">
                 <span>Personas</span>
-              </a>
+                <span class="soon-badge">Soon</span>
+              </span>
             </li>
           </ul>
         </nav>
@@ -44,7 +45,6 @@
     </aside>
 
     <main id="main-content" class="main-content">
-      <div id="interviews-view" class="page-view" data-view="interviews">
       <section id="interviews" class="hero" aria-labelledby="page-title">
         <div class="hero__content">
           <p class="eyebrow">Research methods</p>
@@ -70,7 +70,243 @@
           </div>
         </div>
       </section>
-@@ -310,34 +310,459 @@
+
+      <section class="summary-section" aria-labelledby="choose-title">
+        <div class="section-heading">
+          <p class="eyebrow">Decision guide</p>
+          <h2 id="choose-title">How to choose the right interview type</h2>
+          <p>Start with the decision you need to make. The interview type should match the learning goal, not just the project stage.</p>
+        </div>
+
+        <div class="decision-grid" aria-label="Interview type decision guide">
+          <article class="decision-card">
+            <p>Do we understand the problem?</p>
+            <strong>Customer / User Discovery Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Do we understand how the customer works today?</p>
+            <strong>Current Process / Workflow Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Do we understand what this feature needs to solve?</p>
+            <strong>Feature Discovery Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Does this design direction make sense?</p>
+            <strong>Concept Feedback Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>Can users complete the task successfully?</p>
+            <strong>Usability Testing Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>What do customers think about the current experience?</p>
+            <strong>Customer Feedback Session</strong>
+          </article>
+          <article class="decision-card">
+            <p>Where could we create future value?</p>
+            <strong>Innovation / Future Opportunity Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>Is the feature being adopted and delivering value?</p>
+            <strong>Post-release / Adoption Interview</strong>
+          </article>
+          <article class="decision-card">
+            <p>How does this connect to customer business goals?</p>
+            <strong>Strategic Customer Interview</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="library-section" aria-labelledby="library-title">
+        <div class="section-heading section-heading--inline">
+          <div>
+            <p class="eyebrow">Method library</p>
+            <h2 id="library-title">Interview cards</h2>
+          </div>
+          <button class="button" id="toggle-all" type="button">Expand all</button>
+        </div>
+
+        <div class="toolbar" role="search">
+          <label for="card-search">Search interview types</label>
+          <input id="card-search" type="search" placeholder="Search interview types..." autocomplete="off">
+        </div>
+
+        <div class="card-list" id="card-list">
+          <article class="interview-card" data-search-content="Customer / User Discovery Interview Discovery Understand users, their goals, needs, pain points, behaviours, and context before defining a solution. Early in discovery, problem area, new product opportunity, unclear user need. Who users are, what they are trying to achieve, challenges, workarounds, success. How do you currently handle this process? most difficult parts task? what happens when something goes wrong? tools systems use today? what would make this process easier? User needs, pain points, themes, opportunity areas, assumptions, recommendations, real customer problem.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill">Discovery</span>
+                <h3>Customer / User Discovery Interview</h3>
+                <p>Understand users, their goals, needs, pain points, behaviours, and context before defining a solution.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-discovery">
+                <span class="accordion-toggle__text">Expand</span>
+                <span class="chevron" aria-hidden="true"></span>
+              </button>
+            </div>
+            <div class="accordion-panel" id="panel-discovery">
+              <div class="accordion-panel__inner">
+                <dl class="detail-grid">
+                  <div><dt>Purpose</dt><dd>To understand users, their goals, needs, pain points, behaviours, and context before defining a solution.</dd></div>
+                  <div><dt>When we use it</dt><dd>Early in discovery, when we are exploring a problem area, new product opportunity, or unclear user need.</dd></div>
+                  <div><dt>What we want to learn</dt><dd>Who the users are, what they are trying to achieve, what challenges they face, what workarounds they use, and what success looks like for them.</dd></div>
+                  <div><dt>Typical questions</dt><dd><ul><li>How do you currently handle this process?</li><li>What are the most difficult parts of this task?</li><li>What happens when something goes wrong?</li><li>What tools or systems do you use today?</li><li>What would make this process easier?</li></ul></dd></div>
+                  <div><dt>Output</dt><dd>User needs, pain points, themes, opportunity areas, assumptions to validate, and early design recommendations.</dd></div>
+                  <div><dt>Why it matters</dt><dd>It helps the team understand the real customer problem before jumping into solution design.</dd></div>
+                </dl>
+              </div>
+            </div>
+          </article>
+
+          <article class="interview-card" data-search-content="Current Process / Workflow Interview Workflow Understand how customers currently complete a specific process from start to finish. map existing workflow operational behaviour redesign journey. steps roles tools decision points manual workarounds dependencies exceptions pain points. walk us through today before after involved information decision delays errors exceptions. Journey maps workflow diagrams process maps pain point maps opportunity areas requirements real behaviour actual way of working system view assumptions.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--blue">Workflow</span>
+                <h3>Current Process / Workflow Interview</h3>
+                <p>Understand how customers currently complete a specific process from start to finish.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-workflow"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-workflow"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand how customers currently complete a specific process from start to finish.</dd></div>
+              <div><dt>When we use it</dt><dd>When we need to map an existing workflow, understand operational behaviour, or redesign part of a journey.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Steps in the process, roles involved, tools used, decision points, manual workarounds, dependencies, exceptions, and pain points.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Can you walk us through how you do this today?</li><li>What happens before and after this step?</li><li>Who is involved in this process?</li><li>What information do you need to make a decision?</li><li>Where do delays, errors, or exceptions usually happen?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Journey maps, workflow diagrams, process maps, pain point maps, opportunity areas, and requirements informed by real behaviour.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps the team design around the customer’s actual way of working, not only the system view or internal assumptions.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Feature Discovery Interview Feature discovery Understand the need, value, and context for a specific feature before designing it. feature idea problem solve workflow. why needed who needs it how often outcome expects. What problem would this feature help solve? when use information need action expect valuable not valuable. Feature goals user needs acceptance considerations design principles success criteria risks assumptions internal stakeholder requests.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--purple">Feature discovery</span>
+                <h3>Feature Discovery Interview</h3>
+                <p>Understand the need, value, and context for a specific feature before designing it.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-feature"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-feature"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand the need, value, and context for a specific feature before designing it.</dd></div>
+              <div><dt>When we use it</dt><dd>When a feature idea exists, but we need to better understand the problem it should solve and how it fits into the user’s workflow.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Why the feature is needed, who needs it, what problem it solves, how often the problem occurs, and what outcome the user expects.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What problem would this feature help you solve?</li><li>When would you use it?</li><li>What information would you need to see?</li><li>What action would you expect to take from here?</li><li>What would make this feature valuable or not valuable to you?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Feature goals, user needs, acceptance considerations, design principles, success criteria, and risks or assumptions.</dd></div>
+              <div><dt>Why it matters</dt><dd>It prevents the team from building a feature based only on internal assumptions or stakeholder requests.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Concept Feedback Session Concept validation Get early feedback on a design direction, concept, prototype, or proposed experience before final. wireframes sketches flows concept designs direction makes sense. users understand expectations useful confusing missing. What showing do next useful unclear fit work. Design feedback comprehension issues missing information prioritised improvements confidence proposed direction detailed design development.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--amber">Concept validation</span>
+                <h3>Concept Feedback Session</h3>
+                <p>Get early feedback on a design direction, concept, prototype, or proposed experience before it becomes final.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-concept"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-concept"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To get early feedback on a design direction, concept, prototype, or proposed experience before it becomes final.</dd></div>
+              <div><dt>When we use it</dt><dd>When we have early wireframes, sketches, flows, or concept designs and need to understand whether the direction makes sense.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users understand the concept, whether it matches their expectations, what feels useful, what is confusing, and what may be missing.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What do you think this is showing you?</li><li>What would you do next from here?</li><li>What feels useful or not useful?</li><li>Is anything unclear?</li><li>How well does this fit into the way you work?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Design feedback, comprehension issues, missing information, prioritised improvements, and confidence level in the proposed direction.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps us test the direction early, before too much time is invested in detailed design or development.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Usability Testing Session Usability Evaluate whether users can successfully use a design, prototype, or live feature. clickable flow implemented feature interact complete key tasks stuck misunderstand improved. show complete task click expect happen difficult unclear confident. Usability issues severity ratings task success observations recommendations changes before release useful understandable usable.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--green">Usability</span>
+                <h3>Usability Testing Session</h3>
+                <p>Evaluate whether users can successfully use a design, prototype, or live feature.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-usability"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-usability"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To evaluate whether users can successfully use a design, prototype, or live feature.</dd></div>
+              <div><dt>When we use it</dt><dd>When we have a prototype, clickable flow, or implemented feature that users can interact with.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users can complete key tasks, where they get stuck, what they misunderstand, and what needs to be improved.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Please show us how you would complete this task.</li><li>What would you click next?</li><li>What do you expect to happen here?</li><li>Was anything difficult or unclear?</li><li>How confident would you feel using this?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Usability issues, severity ratings, task success observations, design recommendations, and changes needed before release.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps ensure that what we design is not only useful, but also understandable and usable.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Customer Feedback Session Feedback Gather structured feedback from customers on existing product area live feature recent change satisfaction friction improvement areas. works well does not causes friction customers value improve. how working today use most often difficult inefficient change impact day-to-day work. Feedback themes improvement opportunities product pain points customer sentiment backlog items current product support tickets.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--pink">Feedback</span>
+                <h3>Customer Feedback Session</h3>
+                <p>Gather structured feedback from customers on an existing product area, live feature, or recent change.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-feedback"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-feedback"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To gather structured feedback from customers on an existing product area, live feature, or recent change.</dd></div>
+              <div><dt>When we use it</dt><dd>When we need feedback on something customers already use, or when we want to understand satisfaction, friction, and improvement areas.</dd></div>
+              <div><dt>What we want to learn</dt><dd>What works well, what does not, what causes friction, what customers value, and what they would improve.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>How is this working for you today?</li><li>What do you use most often?</li><li>What feels difficult or inefficient?</li><li>What would you change?</li><li>What impact does this have on your day-to-day work?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Feedback themes, improvement opportunities, product pain points, customer sentiment, and possible backlog items.</dd></div>
+              <div><dt>Why it matters</dt><dd>It gives the team a direct view of customer experience with the current product, rather than relying only on internal opinions or support tickets.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Innovation / Future Opportunity Interview Innovation Explore future-facing needs unmet problems opportunities product innovation beyond feature delivery product workflow market evolve emerging strategic pain points inefficient workflows unmet expectations future goals new value. changing team works problems future wish product help takes too much time perfect process. Future opportunities innovation themes product vision strategic recommendations problem spaces discovery meaningful future value.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--teal">Innovation</span>
+                <h3>Innovation / Future Opportunity Interview</h3>
+                <p>Explore future-facing needs, unmet problems, and opportunities for product innovation.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-innovation"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-innovation"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To explore future-facing needs, unmet problems, and opportunities for product innovation.</dd></div>
+              <div><dt>When we use it</dt><dd>When we are looking beyond immediate feature delivery and exploring where the product, workflow, or market could evolve.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Emerging needs, strategic pain points, inefficient workflows, unmet expectations, future goals, and areas where the product could create new value.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What is changing in the way your team works?</li><li>What problems do you expect to become more important in the future?</li><li>What do you wish the product could help you with?</li><li>What takes too much time today?</li><li>If this process worked perfectly, what would that look like?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Future opportunities, innovation themes, product vision input, strategic recommendations, and problem spaces for further discovery.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps the business think beyond incremental improvements and identify meaningful future value for customers.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Post-release / Adoption Interview Adoption Understand whether a released feature is being used whether delivers value blocking adoption released piloted. users know feature exists use workflow value low high. Have you used feature when use value provide stops using more useful. Adoption insights value validation improvement opportunities usage barriers recommendations iteration successful real use delivered.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--indigo">Adoption</span>
+                <h3>Post-release / Adoption Interview</h3>
+                <p>Understand whether a released feature is being used, whether it delivers value, and what might be blocking adoption.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-adoption"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-adoption"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand whether a released feature is being used, whether it delivers value, and what might be blocking adoption.</dd></div>
+              <div><dt>When we use it</dt><dd>After a feature has been released or piloted with customers.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Whether users know the feature exists, whether they use it, how it fits into their workflow, what value it provides, and why adoption may be low or high.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>Have you used this feature?</li><li>When do you use it?</li><li>What value does it provide?</li><li>What stops you from using it?</li><li>What would make it more useful?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Adoption insights, value validation, improvement opportunities, usage barriers, and recommendations for iteration.</dd></div>
+              <div><dt>Why it matters</dt><dd>It helps us understand whether the feature is successful in real use, not just whether it was delivered.</dd></div>
+            </dl></div></div>
+          </article>
+
+          <article class="interview-card" data-search-content="Strategic Customer Interview Strategy Understand customer priorities business goals product expectations long-term relationship needs key customers strategic accounts roadmap. business priorities strategic challenges perceived value support goals. main priorities this year support limit goals operational challenges more valuable longer term. Strategic insights account-level themes roadmap input business needs opportunity areas customer business value individual user needs.">
+            <div class="interview-card__header">
+              <div>
+                <span class="pill pill--slate">Strategy</span>
+                <h3>Strategic Customer Interview</h3>
+                <p>Understand customer priorities, business goals, product expectations, and long-term relationship needs.</p>
+              </div>
+              <button class="accordion-toggle" type="button" aria-expanded="false" aria-controls="panel-strategy"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+            </div>
+            <div class="accordion-panel" id="panel-strategy"><div class="accordion-panel__inner"><dl class="detail-grid">
+              <div><dt>Purpose</dt><dd>To understand customer priorities, business goals, product expectations, and long-term relationship needs.</dd></div>
+              <div><dt>When we use it</dt><dd>When working with key customers, strategic accounts, or customers involved in roadmap conversations.</dd></div>
+              <div><dt>What we want to learn</dt><dd>Business priorities, strategic challenges, product expectations, perceived value, and areas where the product could better support their goals.</dd></div>
+              <div><dt>Typical questions</dt><dd><ul><li>What are your main priorities this year?</li><li>Where does our product support or limit your goals?</li><li>What are the biggest operational challenges for your team?</li><li>What would make the product more valuable to your business?</li><li>What areas should we be thinking about longer term?</li></ul></dd></div>
+              <div><dt>Output</dt><dd>Strategic insights, account-level themes, roadmap input, business needs, and opportunity areas.</dd></div>
               <div><dt>Why it matters</dt><dd>It helps connect product and design decisions to customer business value, not only individual user needs.</dd></div>
             </dl></div></div>
           </article>
@@ -95,431 +331,6 @@
           <article class="principle-card"><span>05</span><h3>Share evidence clearly</h3><p>Use themes, quotes, examples, screenshots, recordings, or notes to help teams understand the insight.</p></article>
         </div>
       </section>
-
-      </div>
-
-      <div id="personas-view" class="page-view personas-page" data-view="personas" hidden>
-        <section id="personas" class="hero personas-hero" aria-labelledby="personas-page-title">
-          <div class="hero__content">
-            <p class="eyebrow">Research library</p>
-            <h1 id="personas-page-title">Personas</h1>
-            <p class="hero__subtitle">Personas help us understand the different people involved in customer, technical, operational, and insurance journeys. They give us a shared way to describe user needs, motivations, behaviours, pain points, and decision-making influence across Open GI’s customer ecosystem.</p>
-          </div>
-          <div class="hero__panel personas-summary" aria-label="Personas page summary">
-            <div class="metric-card metric-card--large">
-              <span class="metric-card__value">3</span>
-              <span class="metric-card__label">Value streams</span>
-            </div>
-            <div class="metric-card">
-              <span class="metric-card__value">17</span>
-              <span class="metric-card__label">Personas</span>
-            </div>
-            <div class="metric-card">
-              <span class="metric-card__value">2</span>
-              <span class="metric-card__label">Views: Personas and Value Streams</span>
-            </div>
-          </div>
-        </section>
-
-        <section class="personas-section" aria-labelledby="personas-tabs-title">
-          <div class="section-heading section-heading--inline personas-tabs-heading">
-            <div>
-              <p class="eyebrow">Persona library</p>
-              <h2 id="personas-tabs-title">Explore personas and value streams</h2>
-            </div>
-            <div class="persona-tabs" role="tablist" aria-label="Personas page views">
-              <button id="personas-tab-personas" class="persona-tab persona-tab--active" type="button" role="tab" aria-selected="true" aria-controls="personas-panel-personas" data-persona-tab="personas">Personas</button>
-              <button id="personas-tab-value-streams" class="persona-tab" type="button" role="tab" aria-selected="false" aria-controls="personas-panel-value-streams" data-persona-tab="value-streams">Value Streams</button>
-            </div>
-          </div>
-
-          <div id="personas-panel-personas" class="persona-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="personas-tab-personas" data-persona-panel="personas">
-            <div class="personas-controls" aria-label="Persona card controls">
-              <button class="button" type="button" id="personas-expand-all">Expand all</button>
-              <button class="button button--secondary" type="button" id="personas-collapse-all">Collapse all</button>
-            </div>
-        <section class="persona-stream" aria-labelledby="acquire-personas-title">
-          <div class="persona-stream__heading">
-            <p class="eyebrow">Value stream</p>
-            <h2 id="acquire-personas-title">Acquire</h2>
-            <p>Acquire focuses on how customers evaluate, buy, integrate, and adopt Open GI products and services. It covers both commercial buying decisions and technical adoption decisions. This stream is concerned with growth, operational efficiency, API quality, security, compliance, stability, scalability, trusted data, total cost of ownership, and confidence in the platform.</p>
-          </div>
-          <div class="persona-card-list">
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Acquire</span>
-                <h3>CEO / Buyer</h3>
-                <p>Senior commercial decision-maker focused on business performance, growth, cost control, risk, and long-term platform value.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-1"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-1"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>The CEO / Buyer is the senior commercial decision-maker. They are accountable for business performance, customer access, insurer relationships, cost control, regulatory pressure, growth, and the commercial risk of platform change. They are not only buying technology. They are deciding whether the platform can support the business safely, commercially, and strategically.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Commercially focused, strategic, risk-aware, and outcome-led.</li><li>Values stability, speed to value, transparency, governance, referenceability, and control of critical data.</li><li>Evaluates vendors based on ecosystem fit, including CRM, data lake, cloud strategy, integration capability, and operating model fit.</li><li>Values reusability, consistency, and integration capability across multiple brands.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Protect volume before pursuing growth.</li><li>Avoid market shrinkage during platform change.</li><li>Improve combined ratio and operating leverage.</li><li>Reduce unit cost and reinvest savings into rate.</li><li>Simplify the estate to fewer core operational systems.</li><li>Use data to win capacity conversations.</li><li>Gain trustworthy MI for faster decision-making.</li><li>Scale without simply adding headcount.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Revenue leakage during change.</li><li>Panel risk and aggregator volatility.</li><li>Brittle or sprawling technology.</li><li>Re-keying that drives error and cost.</li><li>Slow or untrusted MI.</li><li>Delayed visibility of loss ratio and profitability.</li><li>Pressure to simplify technology while remaining open to ecosystem innovation.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>The CEO / Buyer is influenced by operations leaders, CTO or CIO stakeholders, trading and placement teams, and compliance or risk teams. Their decision criteria include phase-based delivery, operational efficiency, MI quality and timeliness, ease of integration, regulatory evidence, and commercial terms that match cash and EBIT cadence.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Better executive-level value story.</li><li>Trusted MI and reporting.</li><li>Operational stability and observability.</li><li>Clear compliance evidence.</li><li>Integration confidence across brands.</li><li>Reduced total cost of ownership.</li><li>Clear pricing and billing model.</li><li>Composable architecture narrative.</li><li>Transparent data ownership.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Acquire</span>
-                <h3>CTO</h3>
-                <p>Technical strategy owner focused on architecture fit, integration quality, scalability, resilience, and future operating model.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-2"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-2"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>The CTO owns the technical strategy and decides whether the platform fits the organisation’s long-term architecture, integration model, scalability needs, and future operating model. They are less focused on individual API calls and more focused on whether the platform can become part of a sustainable, flexible, and scalable technology estate.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Strategic, architecture-led, technically pragmatic, and risk-aware.</li><li>Cares about platform evolution, integration quality, data flows, resilience, API maturity, cloud readiness, observability, and technical governance.</li><li>Wants proof that the platform can support multiple brands, products, channels, and future change without creating heavy vendor dependency.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Reduce technical debt.</li><li>Improve integration consistency.</li><li>Support scalable architecture.</li><li>Enable automation across journeys.</li><li>Avoid brittle point-to-point integrations.</li><li>Improve data availability across the business.</li><li>Support composable architecture.</li><li>Reduce reliance on vendor-led change.</li><li>Align the platform with cloud, CRM, data lake, and wider ecosystem strategy.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of orchestration guidance.</li><li>Incomplete or hard-to-access API documentation.</li><li>Unclear integration patterns.</li><li>Difficulty mapping platform data into centralised group systems.</li><li>Limited sandbox or mock environments.</li><li>Inconsistent API behaviour.</li><li>Concerns about long-term extensibility.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>The CTO is a key technical approver. They influence whether Open GI is seen as technically credible, future-ready, and suitable for enterprise adoption. They ask whether the platform can integrate with the ecosystem, automate key journeys, provide the required data, scale across brands or business units, and support proper observability and governance.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Clear API strategy.</li><li>Developer portal.</li><li>API orchestration guidance.</li><li>End-to-end journey examples.</li><li>Sandbox and mock environments.</li><li>Event stream documentation.</li><li>Integration patterns for CRM, data lake, and cloud ecosystems.</li><li>Observability and platform health visibility.</li><li>Reusable architecture guidance.</li><li>Reduced vendor dependency.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Acquire</span>
-                <h3>Development Manager / Integrator</h3>
-                <p>Practical implementation lead focused on API clarity, documentation, testing, automation, and delivery confidence.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-3"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-3"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>The Development Manager / Integrator is responsible for practical implementation. They assess whether the platform is easy to integrate with, test, document, automate, and maintain. They are close to the actual delivery work and feel the impact of poor documentation, inconsistent APIs, unclear examples, and missing technical environments.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Hands-on, practical, implementation-focused, and detail-sensitive.</li><li>Focuses on usability, clarity, and real implementation effort.</li><li>May work internally or through external development agencies.</li><li>Wants predictable, well-structured API behaviour.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Access APIs immediately without unnecessary bureaucracy.</li><li>Understand whether APIs are intuitive and logically structured.</li><li>Chain APIs into broker-specific journeys.</li><li>Build reusable patterns across multiple brands or products.</li><li>Reduce friction in development cycles.</li><li>Avoid vendor dependency.</li><li>Use events and extensibility to automate workflows.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of orchestration guidance.</li><li>API documentation behind login or incomplete.</li><li>Difficulty ingesting or mapping data into centralised group systems.</li><li>No sandbox, mock environments, or usable examples.</li><li>Unclear end-to-end journey patterns.</li><li>Slow delivery when simple changes require vendor involvement.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>They influence implementation confidence and technical feasibility. Their non-negotiables include APIs covering required end-to-end journeys such as quote, bind, and renewal; clear documentation; a well-structured developer portal; sandbox or mock environments; and availability of required data for ingestion.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Developer portal improvements.</li><li>Clear API documentation.</li><li>Self-service sandbox access.</li><li>Mock environments.</li><li>Quote to bind to renewal API examples.</li><li>Reusable boilerplates.</li><li>API testing tools.</li><li>Event stream guidance.</li><li>Integration quickstarts.</li><li>Reduced vendor dependency.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Acquire</span>
-                <h3>CISO</h3>
-                <p>Security and risk authority focused on compliance evidence, data protection, resilience, auditability, and third-party risk.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-4"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-4"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>The CISO is responsible for ensuring the platform and its integrations meet security, compliance, resilience, regulatory, and data protection expectations. They may not be the buyer, but they can approve, delay, challenge, or block adoption if security and compliance risks are not clear.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Risk-focused, evidence-led, compliance-driven, and protective of business and customer data.</li><li>Cares about third-party risk, data ownership, auditability, resilience, access control, regulatory evidence, incident readiness, and security patterns.</li><li>Needs clarity rather than reassurance. They want proof.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Minimise third-party risk.</li><li>Protect customer and business data.</li><li>Ensure GDPR and FCA alignment.</li><li>Support ISO or SOC 2 expectations.</li><li>Improve auditability.</li><li>Ensure integrations follow secure patterns.</li><li>Avoid hidden data exposure.</li><li>Reduce operational and regulatory risk.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of transparent security evidence.</li><li>Unclear data ownership or IP boundaries.</li><li>Unclear access models.</li><li>Limited auditability.</li><li>Insufficient evidence of regulatory compliance.</li><li>Concerns about third-party integration risk.</li><li>Weak documentation around data flows.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>The CISO influences procurement confidence, technical sign-off, risk approval, and compliance readiness. They ask where the data goes, who owns the data, how access is controlled, how activity is audited, how the platform supports GDPR and FCA obligations, what happens if something fails, and how compliance can be proved.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Clear security and compliance documentation.</li><li>GDPR and FCA evidence.</li><li>ISO / SOC 2 readiness material.</li><li>Data ownership transparency.</li><li>Audit logs and access control visibility.</li><li>Secure API patterns.</li><li>Integration security guidance.</li><li>Operational resilience evidence.</li><li>Incident and observability reporting.</li><li>Compliance-friendly platform documentation.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          </div>
-        </section>
-        <section class="persona-stream" aria-labelledby="distribute-personas-title">
-          <div class="persona-stream__heading">
-            <p class="eyebrow">Value stream</p>
-            <h2 id="distribute-personas-title">Distribute</h2>
-            <p>Distribute focuses on how insurance products are developed, placed, traded, distributed, monitored, and optimised across insurers, MGAs, delegated authority brokers, underwriters, and broker channels. This stream is concerned with distribution reach, capacity, quote and bind journeys, broker trust, underwriting profitability, operational efficiency, product development, observability, performance, data, and ROI.</p>
-          </div>
-          <div class="persona-card-list">
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>Insurer Distribution / Product Manager</h3>
-                <p>Responsible for expanding broker distribution, protecting underwriting profitability, monitoring product performance, and ensuring products reach the right market efficiently.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-5"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-5"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Owns insurer product distribution performance and ensures products can be launched, monitored, governed, and optimised across broker channels without losing underwriting control.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Commercially aware and data-led.</li><li>Balances distribution growth with underwriting profitability.</li><li>Depends on reliable MI, broker performance insight, and scalable tooling.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Expand quality broker distribution.</li><li>Protect profitability and claims ratios.</li><li>Onboard brokers efficiently.</li><li>Understand broker and product performance.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Limited visibility of broker performance.</li><li>Slow broker onboarding.</li><li>Weak claims or loss-ratio insight.</li><li>Distribution growth that increases underwriting risk.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences product rollout, broker activation, capacity confidence, and whether distribution tooling is trusted for growth.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Broker onboarding workflows.</li><li>Reliable distribution MI.</li><li>Claims and profitability dashboards.</li><li>Broker performance segmentation.</li><li>Scalable product distribution tooling.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>MGA / Distribution Owner</h3>
-                <p>Responsible for making MGA products easy to access, trade, manage, and trust.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-6"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-6"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Owns the MGA distribution model and works to make products easy for brokers to quote, bind, understand, and continue trading through change.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Broker-focused and commercially pragmatic.</li><li>Tracks adoption, quote and bind performance, appetite clarity, and capacity confidence.</li><li>Needs migration continuity and trusted distribution insight.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Increase broker adoption.</li><li>Make appetite clear.</li><li>Maintain stable capacity relationships.</li><li>Improve quote and bind conversion.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Broker mistrust during migration.</li><li>Unclear appetite or referral rules.</li><li>Poor quote and bind performance.</li><li>Limited view of distribution performance.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Shapes distribution decisions by showing whether brokers can trade confidently and whether capacity providers can trust performance.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Broker panel communications.</li><li>Appetite visibility.</li><li>Quote and bind performance insight.</li><li>Migration continuity tooling.</li><li>Capacity reporting.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>Product &amp; Distribution Owner, DA Scheme Broker</h3>
-                <p>Owns product or scheme performance across build, governance, distribution, and sometimes wholesale relationships.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-7"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-7"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Manages delegated authority schemes from product design through trading, governance, reporting, optimisation, and insurer relationship management.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Product-minded, governance-aware, and commercially accountable.</li><li>Needs control over schemes, rates, referrals, rules, dashboards, and insurer reporting.</li><li>Values no-code configuration, pricing simulation, and flexible risk domains.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Grow GWP profitably.</li><li>Optimise schemes using data.</li><li>Maintain stable insurer capacity.</li><li>Configure products faster.</li><li>Report performance clearly to insurers.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Manual product changes.</li><li>Poor referral analysis.</li><li>Limited self-service dashboards.</li><li>Hard-to-model pricing changes.</li><li>Rigid risk domains and slow sandbox access.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences scheme investment and partner confidence by connecting product performance, delegated authority governance, and data-led insurer reporting.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>No-code configuration.</li><li>Self-service scheme dashboards.</li><li>Referral analysis.</li><li>Pricing simulation.</li><li>Sandbox environments.</li><li>Flexible risk domains.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>Delegated Authority Broker, Open Market</h3>
-                <p>Places risks that may not fit straightforward delegated schemes.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-8"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-8"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Places open market or non-standard risks and needs quick market access, clear submission progress, and reduced operational friction.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Time-sensitive and relationship-led.</li><li>Balances speed, control, market appetite, and capacity access.</li><li>Needs visibility across submissions and trading status.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Place risks quickly.</li><li>Reach suitable markets.</li><li>Reduce re-keying.</li><li>Keep control of submissions.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Slow market response.</li><li>Unclear appetite.</li><li>Repeated data entry.</li><li>Limited visibility of submission status.</li><li>Capacity instability.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences adoption by proving whether the platform supports low-friction trading for non-standard risks as well as delegated schemes.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Open market placement workflows.</li><li>Submission tracking.</li><li>Market appetite indicators.</li><li>Re-keying reduction.</li><li>Capacity visibility.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>Underwriter</h3>
-                <p>Responsible for protecting underwriting quality, assessing risk, reviewing referrals, managing appetite, and ensuring delegated trading does not compromise portfolio performance.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-9"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-9"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Reviews risks, manages underwriting appetite, monitors referrals, and protects portfolio profitability while enabling delegated trading.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Risk-led, analytical, and governance-focused.</li><li>Needs clear rules, referral reasons, fraud and claims insight, and partner profitability views.</li><li>Balances trading efficiency with portfolio control.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Improve risk selection.</li><li>Protect loss ratio.</li><li>Understand referral drivers.</li><li>Monitor partner profitability.</li><li>Adjust appetite with confidence.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Opaque product rules.</li><li>Poor referral visibility.</li><li>Limited claims or fraud insight.</li><li>Delayed portfolio performance signals.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Approves confidence in delegated models by assessing whether underwriting quality, rule visibility, and portfolio controls are strong enough.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Underwriting dashboards.</li><li>Referral reason analytics.</li><li>Appetite management tools.</li><li>Claims and fraud insight.</li><li>Partner profitability reporting.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Distribute</span>
-                <h3>Distribution CEO / Senior Commercial Owner</h3>
-                <p>Responsible for the strategic and commercial performance of the distribution model.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-10"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-10"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Owns strategic commercial performance for distribution, including ROI, capacity outcomes, market reach, partner performance, and operational efficiency.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Executive, outcome-led, and commercially accountable.</li><li>Focuses on profitable distribution, market reach, broker adoption, ROI, and evidence of value.</li><li>Needs concise reporting that connects activity to commercial performance.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Grow profitable distribution.</li><li>Prove ROI.</li><li>Improve capacity performance.</li><li>Increase broker adoption.</li><li>Reduce operating cost.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Weak evidence of commercial value.</li><li>Poor partner performance visibility.</li><li>Inefficient operating model.</li><li>Distribution activity not tied to outcomes.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Sets priorities and investment direction based on whether distribution capability creates measurable commercial value.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Executive distribution dashboards.</li><li>ROI reporting.</li><li>Broker adoption metrics.</li><li>Partner performance views.</li><li>Operational efficiency insight.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          </div>
-        </section>
-        <section class="persona-stream" aria-labelledby="serve-personas-title">
-          <div class="persona-stream__heading">
-            <p class="eyebrow">Value stream</p>
-            <h2 id="serve-personas-title">Serve</h2>
-            <p>Serve focuses on how agents and consumers use the platform once products and services are live. It covers agent journeys, consumer journeys, call centre and web journeys, self-service, assisted service, policy changes, renewals, documentation, payments, performance, compliance, accessibility, conversion, and customer outcomes.</p>
-          </div>
-          <div class="persona-card-list">
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>High-Volume Agent</h3>
-                <p>Handles frequent customer interactions across inbound calls, outbound calls, quotes, renewals, MTAs, payments, document requests, and service queries.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-11"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-11"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Handles repeated service and sales interactions at pace while maintaining accuracy, compliance, and good customer outcomes.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Fast-paced, task-focused, and accuracy-driven.</li><li>Needs low latency, clear workflows, document generation, payments, and workload support.</li><li>Works across high volumes of similar interactions.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Complete tasks quickly and correctly.</li><li>Reduce customer wait time.</li><li>Stay compliant.</li><li>Manage workload effectively.</li><li>Produce documents and take payments smoothly.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Slow screens or latency.</li><li>Too many steps.</li><li>Unclear workflow status.</li><li>Manual document or payment handling.</li><li>Compliance pressure during calls.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences operational adoption because small workflow delays multiply across high interaction volumes.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Low-latency processing.</li><li>Clear task flows.</li><li>Integrated payments.</li><li>Document generation.</li><li>Workload dashboards.</li><li>Compliance prompts.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>Specialist Agent</h3>
-                <p>Handles complex, niche, regulated, or non-standard customer journeys.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-12"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-12"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Supports specialist products and complex journeys that require judgement, context, underwriting guidance, and careful compliance handling.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Expert, judgement-led, and detail-oriented.</li><li>Works with niche products, complex risk context, referrals, and regulated journeys.</li><li>Needs guidance without losing flexibility.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Resolve complex cases.</li><li>Apply judgement safely.</li><li>Understand appetite and referral routes.</li><li>Maintain compliance.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Limited support for niche journeys.</li><li>Insufficient risk context.</li><li>Unclear underwriting guidance.</li><li>Poor referral visibility.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences quality and risk outcomes by showing whether complex journeys can be handled safely and efficiently.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Specialist workflow support.</li><li>Context-rich risk views.</li><li>Underwriting guidance.</li><li>Referral management.</li><li>Compliance support for complex journeys.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>End-to-End Multi-Skilled Agent</h3>
-                <p>Supports customers across multiple stages of the policy lifecycle, including quote, sale, payment, MTA, renewal, documentation, and servicing.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-13"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-13"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Handles a broad set of customer needs across the lifecycle and requires continuity across stages, systems, and channels.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Flexible, broad-skilled, and customer-context aware.</li><li>Values consistent UI patterns, reduced handoffs, and first-contact resolution.</li><li>Needs a unified omni-system experience.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Resolve more needs first time.</li><li>Keep customer context visible.</li><li>Move between lifecycle stages smoothly.</li><li>Reduce handoffs.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Fragmented systems.</li><li>Repeated data entry.</li><li>Inconsistent UI patterns.</li><li>Lost customer context.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences service model effectiveness by proving whether one person can confidently support the full policy lifecycle.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Unified customer context.</li><li>Consistent UI patterns.</li><li>Lifecycle navigation.</li><li>Reduced handoffs.</li><li>Omni-system experience.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>Digital Self-Service Consumer</h3>
-                <p>Wants to complete insurance tasks independently online.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-14"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-14"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Uses digital journeys to quote, buy, renew, change, pay, download documents, or service policies without agent support.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Independent, convenience-led, and clarity-seeking.</li><li>Needs accessible, frictionless journeys with clear confirmation and understandable cover.</li><li>Expects digital tasks to be measurable and reliable.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Complete tasks independently.</li><li>Understand cover and price.</li><li>Get confirmation quickly.</li><li>Avoid unnecessary contact.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Confusing cover language.</li><li>Journey friction.</li><li>Unclear confirmation.</li><li>Accessibility issues.</li><li>No insight into customer outcomes.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences digital priorities through conversion, completion, abandonment, accessibility, and outcome measurement.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Self-service journeys.</li><li>Plain-language cover explanations.</li><li>Accessible forms.</li><li>Digital measurement.</li><li>Outcome insight.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>Assisted Channel Consumer</h3>
-                <p>Moves between digital and human-supported channels.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-15"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-15"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Starts, continues, or completes journeys across web, call centre, and assisted channels and expects the organisation to remember context.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Reassurance-seeking and channel-flexible.</li><li>Wants web-to-agent handoff without repeating information.</li><li>Needs clear journey state and consistent answers.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Get help when needed.</li><li>Avoid repeating information.</li><li>Continue journeys across channels.</li><li>Feel reassured about decisions.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Broken handoffs.</li><li>Repeated questions.</li><li>Agent cannot see web context.</li><li>Unclear next steps.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences assisted-service design by showing whether digital and human channels operate as one coherent journey.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Web-to-agent handoff.</li><li>Shared journey state.</li><li>Customer context transfer.</li><li>Conversion observability.</li><li>Assisted-service prompts.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>Price and Cover-Conscious Consumer</h3>
-                <p>Focused on getting suitable insurance cover at a price they understand and trust.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-16"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-16"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Compares price, cover, assumptions, exclusions, and renewal changes to decide whether insurance feels fair and suitable.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>Value-conscious, comparison-led, and trust-sensitive.</li><li>Needs clear cover, exclusions, assumptions, price changes, and fair pricing signals.</li><li>May switch if value is unclear.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Understand what is covered.</li><li>Trust the price.</li><li>Compare options confidently.</li><li>Feel confident at renewal.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Hidden exclusions.</li><li>Unclear assumptions.</li><li>Unexpected renewal changes.</li><li>Hard-to-compare cover.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences conversion and retention by highlighting whether pricing and cover explanations build trust.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>Cover comparison tools.</li><li>Transparent assumptions.</li><li>Renewal explanations.</li><li>Exclusion clarity.</li><li>Fair pricing messaging.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          <article class="persona-card" data-persona-card>
-            <div class="persona-card__header">
-              <div>
-                <span class="persona-badge">Serve</span>
-                <h3>Accessibility or Vulnerability Needs Consumer</h3>
-                <p>May need additional support due to accessibility needs, lower digital confidence, financial vulnerability, comprehension challenges, or situational stress.</p>
-              </div>
-              <button class="accordion-toggle persona-card__toggle" type="button" aria-expanded="false" aria-controls="persona-17"><span class="accordion-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
-            </div>
-            <div class="accordion-panel persona-card__panel" id="persona-17"><div class="accordion-panel__inner"><dl class="detail-grid persona-detail-grid">
-              <div><dt>Role</dt><dd>Needs inclusive, accessible, plain-language journeys and appropriate assisted support to achieve fair outcomes.</dd></div>
-              <div><dt>Key characteristics</dt><dd><ul><li>May have accessibility, comprehension, financial, digital confidence, or situational support needs.</li><li>Needs WCAG-aligned design, Consumer Duty awareness, accessible documentation, and plain language.</li><li>Benefits from flexible routes to help.</li></ul></dd></div>
-              <div><dt>Goals and motivations</dt><dd><ul><li>Complete journeys fairly.</li><li>Understand information clearly.</li><li>Access support without stigma.</li><li>Receive suitable documentation.</li></ul></dd></div>
-              <div><dt>Pain points and challenges</dt><dd><ul><li>Inaccessible forms or documents.</li><li>Complex language.</li><li>No clear assisted route.</li><li>Stressful or exclusionary journeys.</li></ul></dd></div>
-              <div><dt>Decision-making role</dt><dd>Influences compliance, inclusion, and customer-outcome decisions by showing where journeys may disadvantage people.</dd></div>
-              <div><dt>Product opportunities</dt><dd><ul><li>WCAG-aligned journeys.</li><li>Plain-language content.</li><li>Accessible documents.</li><li>Assisted support options.</li><li>Vulnerability indicators.</li><li>Customer outcome measurement.</li></ul></dd></div>
-            </dl></div></div>
-          </article>
-          </div>
-        </section>
-          </div>
-
-          <div id="personas-panel-value-streams" class="persona-tab-panel" role="tabpanel" tabindex="0" aria-labelledby="personas-tab-value-streams" data-persona-panel="value-streams" hidden>
-            <div class="section-heading personas-tab-intro">
-              <p class="eyebrow">Value stream detail</p>
-              <h2>Value Streams</h2>
-              <p>Value streams help us organise customer and user needs around the outcomes they are trying to achieve. They show how different personas influence commercial, technical, distribution, operational, and consumer experiences across the insurance ecosystem.</p>
-            </div>
-            <div class="value-stream-grid">
-        <article class="value-stream-card">
-          <div class="value-stream-card__header">
-            <p class="eyebrow">Value stream</p>
-            <h3>Acquire</h3>
-          </div>
-          <div class="value-stream-card__content">
-            <div><h4>Purpose</h4><p>Acquire focuses on how customers evaluate, buy, integrate, and adopt Open GI products and services.</p></div>
-            <div><h4>Who it serves</h4><ul><li>CEO / Buyer</li><li>CTO</li><li>Development Manager / Integrator</li><li>CISO</li></ul></div>
-            <div><h4>What this stream helps us understand</h4><ul><li>Why customers choose or reject a platform.</li><li>What commercial and technical confidence they need.</li><li>How API quality, integration, compliance, and stability influence adoption.</li><li>What evidence is needed to support buying and procurement decisions.</li><li>How the platform supports growth, scalability, and operational efficiency.</li></ul></div>
-            <div><h4>Key product themes</h4><ul><li>APIs and developer experience.</li><li>Compliance and regulatory assurance.</li><li>Operational stability and observability.</li><li>Trusted MI and data insights.</li><li>Total cost of ownership.</li><li>Integration confidence.</li><li>Security and third-party risk.</li></ul></div>
-          </div>
-        </article>
-        <article class="value-stream-card">
-          <div class="value-stream-card__header">
-            <p class="eyebrow">Value stream</p>
-            <h3>Distribute</h3>
-          </div>
-          <div class="value-stream-card__content">
-            <div><h4>Purpose</h4><p>Distribute focuses on how insurance products are developed, placed, traded, distributed, monitored, and optimised.</p></div>
-            <div><h4>Who it serves</h4><ul><li>Insurer Distribution / Product Manager</li><li>MGA / Distribution Owner</li><li>Product &amp; Distribution Owner, DA Scheme Broker</li><li>Delegated Authority Broker, Open Market</li><li>Underwriter</li><li>Distribution CEO / Senior Commercial Owner</li></ul></div>
-            <div><h4>What this stream helps us understand</h4><ul><li>How insurer capacity is placed and managed.</li><li>How brokers quote, bind, refer, and trade business.</li><li>How product owners optimise schemes and delegated authority products.</li><li>How underwriting quality and profitability are protected.</li><li>How distribution performance, broker adoption, and ROI are measured.</li></ul></div>
-            <div><h4>Key product themes</h4><ul><li>Quote and bind journeys.</li><li>Broker panel trust.</li><li>Flexible risk domains.</li><li>Broker activation.</li><li>Capacity outcome reporting.</li><li>Referral visibility.</li><li>Scheme performance dashboards.</li><li>Product optimisation.</li><li>Trading observability.</li><li>Partner profitability insight.</li></ul></div>
-          </div>
-        </article>
-        <article class="value-stream-card">
-          <div class="value-stream-card__header">
-            <p class="eyebrow">Value stream</p>
-            <h3>Serve</h3>
-          </div>
-          <div class="value-stream-card__content">
-            <div><h4>Purpose</h4><p>Serve focuses on how agents and consumers use the platform once products and services are live.</p></div>
-            <div><h4>Who it serves</h4><ul><li>High-Volume Agent</li><li>Specialist Agent</li><li>End-to-End Multi-Skilled Agent</li><li>Digital Self-Service Consumer</li><li>Assisted Channel Consumer</li><li>Price and Cover-Conscious Consumer</li><li>Accessibility or Vulnerability Needs Consumer</li></ul></div>
-            <div><h4>What this stream helps us understand</h4><ul><li>How agents complete operational and customer-facing tasks.</li><li>How consumers move through digital, assisted, and call centre journeys.</li><li>Where friction appears in quote, sale, MTA, renewal, payment, and document journeys.</li><li>How accessibility, self-service, compliance, and customer outcomes are supported.</li><li>How performance and usability affect both agent productivity and customer experience.</li></ul></div>
-            <div><h4>Key product themes</h4><ul><li>Customisable and adaptive agent UI.</li><li>Low latency and high performance processing.</li><li>Regulatory, quality, and script compliance.</li><li>Workload management.</li><li>Document and pack generation.</li><li>Payment capability.</li><li>Unified omni-system experience.</li><li>Web-to-agent accuracy.</li><li>Self-service.</li><li>Accessibility and inclusive journeys.</li><li>Customer outcome measurement.</li></ul></div>
-          </div>
-        </article>
-            </div>
-          </div>
-        </section>
-      </div>
 
       <footer class="site-footer">
         <p>Design Team Research Library</p>
