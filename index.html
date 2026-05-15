@@ -29,10 +29,9 @@
               </a>
             </li>
             <li>
-              <span class="side-nav__link side-nav__link--disabled" aria-disabled="true">
+              <a class="side-nav__link" href="#personas">
                 <span>Personas</span>
-                <span class="soon-badge">Soon</span>
-              </span>
+              </a>
             </li>
           </ul>
         </nav>
@@ -45,6 +44,7 @@
     </aside>
 
     <main id="main-content" class="main-content">
+      <div class="page-view" id="interviews-view" data-view="interviews">
       <section id="interviews" class="hero" aria-labelledby="page-title">
         <div class="hero__content">
           <p class="eyebrow">Research methods</p>
@@ -331,6 +331,49 @@
           <article class="principle-card"><span>05</span><h3>Share evidence clearly</h3><p>Use themes, quotes, examples, screenshots, recordings, or notes to help teams understand the insight.</p></article>
         </div>
       </section>
+
+      </div>
+
+      <div class="page-view personas-page" id="personas-view" data-view="personas" hidden>
+        <section class="personas-header" id="personas" aria-labelledby="personas-page-title">
+          <p class="eyebrow">Customer ecosystem</p>
+          <h1 id="personas-page-title">Personas &amp; Value Streams</h1>
+          <p class="personas-header__intro">Personas and value streams help us understand the different people involved in customer, technical, operational, and insurance journeys. They give us a shared way to describe user needs, motivations, behaviours, pain points, and decision-making influence across Open GI’s customer ecosystem.</p>
+          <div class="personas-summary" aria-label="Personas summary">
+            <article class="personas-summary__card">
+              <span class="personas-summary__value">3</span>
+              <span class="personas-summary__label">value streams</span>
+            </article>
+            <article class="personas-summary__card">
+              <span class="personas-summary__value">17</span>
+              <span class="personas-summary__label">personas</span>
+            </article>
+            <article class="personas-summary__card">
+              <span class="personas-summary__value">2</span>
+              <span class="personas-summary__label">views</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="personas-workspace" aria-label="Personas and value streams workspace">
+          <div class="personas-tabs" role="tablist" aria-label="Personas page views">
+            <button class="personas-tab" id="personas-tab-personas" type="button" role="tab" aria-selected="true" aria-controls="personas-panel-personas" data-personas-tab="personas">Personas</button>
+            <button class="personas-tab" id="personas-tab-streams" type="button" role="tab" aria-selected="false" aria-controls="personas-panel-streams" data-personas-tab="streams">Value Streams</button>
+          </div>
+
+          <div class="personas-tab-panel" id="personas-panel-personas" role="tabpanel" aria-labelledby="personas-tab-personas" data-personas-panel="personas">
+            <div class="personas-controls" aria-label="Persona card controls">
+              <button class="button" id="personas-expand-all" type="button">Expand all</button>
+              <button class="button button--secondary" id="personas-collapse-all" type="button">Collapse all</button>
+            </div>
+            <div class="personas-stream-list" id="personas-stream-list"></div>
+          </div>
+
+          <div class="personas-tab-panel" id="personas-panel-streams" role="tabpanel" aria-labelledby="personas-tab-streams" data-personas-panel="streams" hidden>
+            <div class="value-stream-list" id="value-stream-list"></div>
+          </div>
+        </section>
+      </div>
 
       <footer class="site-footer">
         <p>Design Team Research Library</p>
