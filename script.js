@@ -1,26 +1,13 @@
-const pageViews = Array.from(document.querySelectorAll("[data-view]"));
-const viewLinks = Array.from(document.querySelectorAll("[data-view-link]"));
-
-const interviewCards = Array.from(document.querySelectorAll(".interview-card"));
-const interviewToggles = Array.from(document.querySelectorAll(".interview-card .accordion-toggle"));
+const cards = Array.from(document.querySelectorAll(".interview-card"));
+const toggles = Array.from(document.querySelectorAll(".accordion-toggle"));
 const toggleAllButton = document.querySelector("#toggle-all");
 const searchInput = document.querySelector("#card-search");
 const emptyState = document.querySelector("#empty-state");
-
-const personaToggles = Array.from(document.querySelectorAll(".persona-card__toggle"));
-const personaExpandAllButton = document.querySelector("#personas-expand-all");
-const personaCollapseAllButton = document.querySelector("#personas-collapse-all");
-const personaTabs = Array.from(document.querySelectorAll("[data-persona-tab]"));
-const personaPanels = Array.from(document.querySelectorAll("[data-persona-panel]"));
 
 const setCardExpanded = (button, shouldExpand) => {
   const panelId = button.getAttribute("aria-controls");
   const panel = document.getElementById(panelId);
   const label = button.querySelector(".accordion-toggle__text");
-
-  if (!panel || !label) {
-    return;
-  }
 
   button.setAttribute("aria-expanded", String(shouldExpand));
   label.textContent = shouldExpand ? "Collapse" : "Expand";
@@ -28,11 +15,7 @@ const setCardExpanded = (button, shouldExpand) => {
 };
 
 const syncToggleAllLabel = () => {
-  if (!toggleAllButton) {
-    return;
-  }
-
-  const visibleButtons = interviewCards
+  const visibleButtons = cards
     .filter((card) => !card.hidden)
     .map((card) => card.querySelector(".accordion-toggle"));
 
@@ -44,77 +27,15 @@ const syncToggleAllLabel = () => {
 };
 
 const updateOpenPanelHeights = () => {
-  [...interviewToggles, ...personaToggles].forEach((button) => {
+  toggles.forEach((button) => {
     if (button.getAttribute("aria-expanded") === "true") {
       const panel = document.getElementById(button.getAttribute("aria-controls"));
-
-      if (panel) {
-        panel.style.maxHeight = `${panel.scrollHeight}px`;
-      }
+      panel.style.maxHeight = `${panel.scrollHeight}px`;
     }
   });
 };
 
-const showView = (viewName) => {
-  const targetView = pageViews.find((view) => view.dataset.view === viewName);
-
-  if (!targetView) {
-    return;
-  }
-
-  pageViews.forEach((view) => {
-    view.hidden = view.dataset.view !== viewName;
-  });
-
-  viewLinks.forEach((link) => {
-    const isActive = link.dataset.viewLink === viewName;
-    link.classList.toggle("side-nav__link--active", isActive);
-
-    if (isActive) {
-      link.setAttribute("aria-current", "page");
-    } else {
-      link.removeAttribute("aria-current");
-    }
-  });
-
-  updateOpenPanelHeights();
-};
-
-const setPersonaTab = (tabName, shouldFocus = false) => {
-  const activeTab = personaTabs.find((tab) => tab.dataset.personaTab === tabName);
-
-  if (!activeTab) {
-    return;
-  }
-
-  personaTabs.forEach((tab) => {
-    const isSelected = tab.dataset.personaTab === tabName;
-    tab.classList.toggle("persona-tab--active", isSelected);
-    tab.setAttribute("aria-selected", String(isSelected));
-    tab.tabIndex = isSelected ? 0 : -1;
-  });
-
-  personaPanels.forEach((panel) => {
-    panel.hidden = panel.dataset.personaPanel !== tabName;
-  });
-
-  if (shouldFocus) {
-    activeTab.focus();
-  }
-
-  updateOpenPanelHeights();
-};
-
-viewLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    const viewName = link.dataset.viewLink;
-    showView(viewName);
-    history.replaceState(null, "", `#${viewName}`);
-  });
-});
-
-interviewToggles.forEach((button) => {
+toggles.forEach((button) => {
   button.addEventListener("click", () => {
     const isExpanded = button.getAttribute("aria-expanded") === "true";
     setCardExpanded(button, !isExpanded);
@@ -122,91 +43,38 @@ interviewToggles.forEach((button) => {
   });
 });
 
-if (toggleAllButton) {
-  toggleAllButton.addEventListener("click", () => {
-    const visibleCards = interviewCards.filter((card) => !card.hidden);
-    const shouldExpand = visibleCards.some(
-      (card) => card.querySelector(".accordion-toggle").getAttribute("aria-expanded") === "false"
-    );
+toggleAllButton.addEventListener("click", () => {
+  const visibleCards = cards.filter((card) => !card.hidden);
+  const shouldExpand = visibleCards.some(
+    (card) => card.querySelector(".accordion-toggle").getAttribute("aria-expanded") === "false"
+  );
 
-    visibleCards.forEach((card) => {
-      setCardExpanded(card.querySelector(".accordion-toggle"), shouldExpand);
-    });
-
-    syncToggleAllLabel();
+  visibleCards.forEach((card) => {
+    setCardExpanded(card.querySelector(".accordion-toggle"), shouldExpand);
   });
-}
 
-if (searchInput && emptyState) {
-  searchInput.addEventListener("input", (event) => {
-    const query = event.target.value.trim().toLowerCase();
-    let visibleCount = 0;
-
-    interviewCards.forEach((card) => {
-      const searchableText = `${card.textContent} ${card.dataset.searchContent}`.toLowerCase();
-      const isMatch = searchableText.includes(query);
-
-      card.hidden = !isMatch;
-
-      if (isMatch) {
-        visibleCount += 1;
-      }
-    });
-
-    emptyState.hidden = visibleCount !== 0;
-    updateOpenPanelHeights();
-    syncToggleAllLabel();
-  });
-}
-
-personaToggles.forEach((button) => {
-  button.addEventListener("click", () => {
-    const isExpanded = button.getAttribute("aria-expanded") === "true";
-    setCardExpanded(button, !isExpanded);
-  });
+  syncToggleAllLabel();
 });
 
-if (personaExpandAllButton) {
-  personaExpandAllButton.addEventListener("click", () => {
-    personaToggles.forEach((button) => setCardExpanded(button, true));
-  });
-}
+searchInput.addEventListener("input", (event) => {
+  const query = event.target.value.trim().toLowerCase();
+  let visibleCount = 0;
 
-if (personaCollapseAllButton) {
-  personaCollapseAllButton.addEventListener("click", () => {
-    personaToggles.forEach((button) => setCardExpanded(button, false));
-  });
-}
+  cards.forEach((card) => {
+    const searchableText = `${card.textContent} ${card.dataset.searchContent}`.toLowerCase();
+    const isMatch = searchableText.includes(query);
 
-personaTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    setPersonaTab(tab.dataset.personaTab);
-  });
+    card.hidden = !isMatch;
 
-  tab.addEventListener("keydown", (event) => {
-    const currentIndex = personaTabs.indexOf(tab);
-    let nextIndex = currentIndex;
-
-    if (event.key === "ArrowRight") {
-      nextIndex = (currentIndex + 1) % personaTabs.length;
-    } else if (event.key === "ArrowLeft") {
-      nextIndex = (currentIndex - 1 + personaTabs.length) % personaTabs.length;
-    } else if (event.key === "Home") {
-      nextIndex = 0;
-    } else if (event.key === "End") {
-      nextIndex = personaTabs.length - 1;
-    } else {
-      return;
+    if (isMatch) {
+      visibleCount += 1;
     }
-
-    event.preventDefault();
-    setPersonaTab(personaTabs[nextIndex].dataset.personaTab, true);
   });
+
+  emptyState.hidden = visibleCount !== 0;
+  updateOpenPanelHeights();
+  syncToggleAllLabel();
 });
 
 window.addEventListener("resize", updateOpenPanelHeights);
-
-const initialHash = window.location.hash.replace("#", "");
-showView(initialHash === "personas" ? "personas" : "interviews");
-setPersonaTab("personas");
 syncToggleAllLabel();
