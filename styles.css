@@ -362,7 +362,6 @@ a:focus-visible {
   display: none;
 }
 
-.hero,
 .section-shell,
 .personas-header,
 .personas-workspace,
@@ -374,17 +373,32 @@ a:focus-visible {
   backdrop-filter: blur(16px);
 }
 
-.hero {
+.hero,
+.detail-hero {
+  color: var(--white);
+  background-color: var(--black);
+  background-image: url(./portal.svg), linear-gradient(rgb(42, 38, 34) 4%, rgb(46, 38, 51) 32%, rgb(46, 50, 68) 56%, rgb(47, 63, 140) 80%, rgb(47, 75, 186));
+  background-repeat: no-repeat, no-repeat;
+  background-size: min(40%, 460px), cover;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
   position: relative;
+  background-position: right 2rem bottom 2rem, center center;
+  border: 1px solid var(--line-dark);
+  border-radius: 1rem;
+  padding: 3rem;
+  overflow: hidden;
+}
+
+.hero {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
   gap: clamp(var(--space-5), 4vw, var(--space-8));
-  overflow: hidden;
-  padding: clamp(2rem, 5vw, 4.9rem);
-  background: var(--gradient-hero);
 }
 
-.hero::before,
 .personas-header::before {
   position: absolute;
   right: clamp(1.5rem, 4vw, 4rem);
@@ -1106,6 +1120,14 @@ h3 {
 
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero,
+  .detail-hero {
+    padding: 2rem;
+    min-height: 360px;
   }
 }
 
