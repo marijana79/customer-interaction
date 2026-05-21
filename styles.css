@@ -534,6 +534,10 @@ h3 {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  border-radius: 0.5rem;
+  background: var(--white);
+  color: var(--black);
+  font-weight: 400;
 }
 
 .metric-card {
