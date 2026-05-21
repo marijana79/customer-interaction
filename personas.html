@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personas &amp; Value Streams | Design Team Research Library</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="personas.css">
+</head>
+<body class="personas-page">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Research library navigation">
+      <div class="sidebar__inner">
+        <div class="brand" aria-label="Design Team Research Library">
+          <span class="brand__mark" aria-hidden="true">DR</span>
+          <div>
+            <p class="brand__eyebrow">Design Team</p>
+            <p class="brand__name">Research Library</p>
+          </div>
+        </div>
+
+        <nav class="side-nav" aria-label="Primary">
+          <p class="side-nav__label">Topics</p>
+          <ul>
+            <li>
+              <a class="side-nav__link" href="index.html#interviews">
+                <span>Interviews</span>
+              </a>
+            </li>
+            <li>
+              <a class="side-nav__link side-nav__link--active" href="personas.html" aria-current="page">
+                <span>Personas</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="sidebar-card">
+          <p class="sidebar-card__title">Choosing a method</p>
+          <p>Match the conversation type to the decision the team needs to make.</p>
+        </div>
+      </div>
+    </aside>
+
+    <main id="main-content" class="main-content">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero__content">
+          <p class="eyebrow">Customer ecosystem</p>
+          <h1 id="page-title">Personas &amp; Value Streams</h1>
+          <p class="hero__subtitle">Personas and value streams help us understand the different people involved in customer, technical, operational, and insurance journeys.</p>
+          <div class="hero__copy">
+            <p>They give us a shared way to describe user needs, motivations, behaviours, pain points, and decision-making influence across Open GI’s customer ecosystem.</p>
+          </div>
+        </div>
+        <div class="hero__panel" aria-label="Personas snapshot">
+          <div class="metric-card metric-card--large">
+            <span class="metric-card__value">3</span>
+            <span class="metric-card__label">Value streams</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">17</span>
+            <span class="metric-card__label">Personas</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-card__value">2</span>
+            <span class="metric-card__label">Views</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="summary-section personas-shell" aria-labelledby="personas-tabs-title">
+        <div class="section-heading section-heading--inline">
+          <div>
+            <p class="eyebrow">Explore</p>
+            <h2 id="personas-tabs-title">Personas and value stream views</h2>
+          </div>
+          <div class="personas-tabs" role="tablist" aria-label="Personas views">
+            <button class="personas-tab" id="tab-personas" type="button" role="tab" aria-selected="true" aria-controls="panel-personas">Personas</button>
+            <button class="personas-tab" id="tab-value-streams" type="button" role="tab" aria-selected="false" aria-controls="panel-value-streams">Value Streams</button>
+          </div>
+        </div>
+
+        <div class="personas-tab-panel" id="panel-personas" role="tabpanel" aria-labelledby="tab-personas">
+          <div class="personas-controls" aria-label="Persona card controls">
+            <button class="button" id="expand-personas" type="button">Expand all</button>
+            <button class="button" id="collapse-personas" type="button">Collapse all</button>
+          </div>
+
+          <div class="personas-streams">
+            <section class="personas-stream-section" aria-labelledby="acquire-title">
+              <div class="personas-stream-heading">
+                <span class="stream-badge">Acquire</span>
+                <h2 id="acquire-title">Acquire</h2>
+                <p>Acquire focuses on how customers evaluate, buy, integrate, and adopt Open GI products and services. It covers both commercial buying decisions and technical adoption decisions. This stream is concerned with growth, operational efficiency, API quality, security, compliance, stability, scalability, trusted data, total cost of ownership, and confidence in the platform.</p>
+              </div>
+              <div class="persona-card-list">
+                <article class="persona-card">
+                  <div class="persona-card__header">
+                    <div>
+                      <span class="stream-badge">Acquire</span>
+                      <h3>CEO / Buyer</h3>
+                      <p>Senior commercial decision-maker focused on business performance, growth, cost control, risk, and long-term platform value.</p>
+                    </div>
+                    <button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-ceo-buyer"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+                  </div>
+                  <div class="persona-card__panel" id="persona-ceo-buyer"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>The CEO / Buyer is the senior commercial decision-maker. They are accountable for business performance, customer access, insurer relationships, cost control, regulatory pressure, growth, and the commercial risk of platform change. They are not only buying technology. They are deciding whether the platform can support the business safely, commercially, and strategically.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Commercially focused, strategic, risk-aware, and outcome-led.</li><li>Values stability, speed to value, transparency, governance, referenceability, and control of critical data.</li><li>Evaluates vendors based on ecosystem fit, including CRM, data lake, cloud strategy, integration capability, and operating model fit.</li><li>Values reusability, consistency, and integration capability across multiple brands.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Protect volume before pursuing growth.</li><li>Avoid market shrinkage during platform change.</li><li>Improve combined ratio and operating leverage.</li><li>Reduce unit cost and reinvest savings into rate.</li><li>Simplify the estate to fewer core operational systems.</li><li>Use data to win capacity conversations.</li><li>Gain trustworthy MI for faster decision-making.</li><li>Scale without simply adding headcount.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Revenue leakage during change.</li><li>Panel risk and aggregator volatility.</li><li>Brittle or sprawling technology.</li><li>Re-keying that drives error and cost.</li><li>Slow or untrusted MI.</li><li>Delayed visibility of loss ratio and profitability.</li><li>Pressure to simplify technology while remaining open to ecosystem innovation.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>The CEO / Buyer is influenced by operations leaders, CTO or CIO stakeholders, trading and placement teams, and compliance or risk teams. Their decision criteria include phase-based delivery, operational efficiency, MI quality and timeliness, ease of integration, regulatory evidence, and commercial terms that match cash and EBIT cadence.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Better executive-level value story.</li><li>Trusted MI and reporting.</li><li>Operational stability and observability.</li><li>Clear compliance evidence.</li><li>Integration confidence across brands.</li><li>Reduced total cost of ownership.</li><li>Clear pricing and billing model.</li><li>Composable architecture narrative.</li><li>Transparent data ownership.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header">
+                    <div>
+                      <span class="stream-badge">Acquire</span>
+                      <h3>CTO</h3>
+                      <p>Technical strategy owner focused on architecture fit, integration quality, scalability, resilience, and future operating model.</p>
+                    </div>
+                    <button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-cto"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+                  </div>
+                  <div class="persona-card__panel" id="persona-cto"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>The CTO owns the technical strategy and decides whether the platform fits the organisation’s long-term architecture, integration model, scalability needs, and future operating model. They are less focused on individual API calls and more focused on whether the platform can become part of a sustainable, flexible, and scalable technology estate.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Strategic, architecture-led, technically pragmatic, and risk-aware.</li><li>Cares about platform evolution, integration quality, data flows, resilience, API maturity, cloud readiness, observability, and technical governance.</li><li>Wants proof that the platform can support multiple brands, products, channels, and future change without creating heavy vendor dependency.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Reduce technical debt.</li><li>Improve integration consistency.</li><li>Support scalable architecture.</li><li>Enable automation across journeys.</li><li>Avoid brittle point-to-point integrations.</li><li>Improve data availability across the business.</li><li>Support composable architecture.</li><li>Reduce reliance on vendor-led change.</li><li>Align the platform with cloud, CRM, data lake, and wider ecosystem strategy.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of orchestration guidance.</li><li>Incomplete or hard-to-access API documentation.</li><li>Unclear integration patterns.</li><li>Difficulty mapping platform data into centralised group systems.</li><li>Limited sandbox or mock environments.</li><li>Inconsistent API behaviour.</li><li>Concerns about long-term extensibility.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>The CTO is a key technical approver. They influence whether Open GI is seen as technically credible, future-ready, and suitable for enterprise adoption. They ask whether the platform can integrate with the ecosystem, automate key journeys, provide the required data, scale across brands or business units, and support proper observability and governance.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Clear API strategy.</li><li>Developer portal.</li><li>API orchestration guidance.</li><li>End-to-end journey examples.</li><li>Sandbox and mock environments.</li><li>Event stream documentation.</li><li>Integration patterns for CRM, data lake, and cloud ecosystems.</li><li>Observability and platform health visibility.</li><li>Reusable architecture guidance.</li><li>Reduced vendor dependency.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header">
+                    <div>
+                      <span class="stream-badge">Acquire</span>
+                      <h3>Development Manager / Integrator</h3>
+                      <p>Practical implementation lead focused on API clarity, documentation, testing, automation, and delivery confidence.</p>
+                    </div>
+                    <button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-development-manager"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+                  </div>
+                  <div class="persona-card__panel" id="persona-development-manager"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>The Development Manager / Integrator is responsible for practical implementation. They assess whether the platform is easy to integrate with, test, document, automate, and maintain. They are close to the actual delivery work and feel the impact of poor documentation, inconsistent APIs, unclear examples, and missing technical environments.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Hands-on, practical, implementation-focused, and detail-sensitive.</li><li>Focuses on usability, clarity, and real implementation effort.</li><li>May work internally or through external development agencies.</li><li>Wants predictable, well-structured API behaviour.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Access APIs immediately without unnecessary bureaucracy.</li><li>Understand whether APIs are intuitive and logically structured.</li><li>Chain APIs into broker-specific journeys.</li><li>Build reusable patterns across multiple brands or products.</li><li>Reduce friction in development cycles.</li><li>Avoid vendor dependency.</li><li>Use events and extensibility to automate workflows.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of orchestration guidance.</li><li>API documentation behind login or incomplete.</li><li>Difficulty ingesting or mapping data into centralised group systems.</li><li>No sandbox, mock environments, or usable examples.</li><li>Unclear end-to-end journey patterns.</li><li>Slow delivery when simple changes require vendor involvement.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>They influence implementation confidence and technical feasibility. Their non-negotiables include APIs covering required end-to-end journeys such as quote, bind, and renewal; clear documentation; a well-structured developer portal; sandbox or mock environments; and availability of required data for ingestion.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Developer portal improvements.</li><li>Clear API documentation.</li><li>Self-service sandbox access.</li><li>Mock environments.</li><li>Quote to bind to renewal API examples.</li><li>Reusable boilerplates.</li><li>API testing tools.</li><li>Event stream guidance.</li><li>Integration quickstarts.</li><li>Reduced vendor dependency.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header">
+                    <div>
+                      <span class="stream-badge">Acquire</span>
+                      <h3>CISO</h3>
+                      <p>Security and risk authority focused on compliance evidence, data protection, resilience, auditability, and third-party risk.</p>
+                    </div>
+                    <button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-ciso"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button>
+                  </div>
+                  <div class="persona-card__panel" id="persona-ciso"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>The CISO is responsible for ensuring the platform and its integrations meet security, compliance, resilience, regulatory, and data protection expectations. They may not be the buyer, but they can approve, delay, challenge, or block adoption if security and compliance risks are not clear.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Risk-focused, evidence-led, compliance-driven, and protective of business and customer data.</li><li>Cares about third-party risk, data ownership, auditability, resilience, access control, regulatory evidence, incident readiness, and security patterns.</li><li>Needs clarity rather than reassurance. They want proof.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Minimise third-party risk.</li><li>Protect customer and business data.</li><li>Ensure GDPR and FCA alignment.</li><li>Support ISO or SOC 2 expectations.</li><li>Improve auditability.</li><li>Ensure integrations follow secure patterns.</li><li>Avoid hidden data exposure.</li><li>Reduce operational and regulatory risk.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Lack of transparent security evidence.</li><li>Unclear data ownership or IP boundaries.</li><li>Unclear access models.</li><li>Limited auditability.</li><li>Insufficient evidence of regulatory compliance.</li><li>Concerns about third-party integration risk.</li><li>Weak documentation around data flows.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>The CISO influences procurement confidence, technical sign-off, risk approval, and compliance readiness. They ask where the data goes, who owns the data, how access is controlled, how activity is audited, how the platform supports GDPR and FCA obligations, what happens if something fails, and how compliance can be proved.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Clear security and compliance documentation.</li><li>GDPR and FCA evidence.</li><li>ISO / SOC 2 readiness material.</li><li>Data ownership transparency.</li><li>Audit logs and access control visibility.</li><li>Secure API patterns.</li><li>Integration security guidance.</li><li>Operational resilience evidence.</li><li>Incident and observability reporting.</li><li>Compliance-friendly platform documentation.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+              </div>
+            </section>
+
+            <section class="personas-stream-section" aria-labelledby="distribute-title">
+              <div class="personas-stream-heading">
+                <span class="stream-badge stream-badge--distribute">Distribute</span>
+                <h2 id="distribute-title">Distribute</h2>
+                <p>Distribute focuses on how insurance products are developed, placed, traded, distributed, monitored, and optimised across insurers, MGAs, delegated authority brokers, underwriters, and broker channels. This stream is concerned with distribution reach, capacity, quote and bind journeys, broker trust, underwriting profitability, operational efficiency, product development, observability, performance, data, and ROI.</p>
+              </div>
+              <div class="persona-card-list">
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>Insurer Distribution / Product Manager</h3><p>Expands broker distribution, protects underwriting profitability, monitors product performance, and ensures products reach the right market efficiently.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-insurer-distribution"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-insurer-distribution"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Responsible for expanding broker distribution, protecting underwriting profitability, monitoring product performance, and ensuring products reach the right market efficiently.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Commercially aware and portfolio-led.</li><li>Balances distribution growth with underwriting discipline.</li><li>Needs reliable MI, broker performance insight, and compliance evidence.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Grow profitable broker reach.</li><li>Protect claims ratios and product performance.</li><li>Onboard brokers efficiently.</li><li>Understand distribution quality and portfolio trends.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Limited visibility of broker performance.</li><li>Slow or inconsistent MI.</li><li>Hard-to-scale distribution tooling.</li><li>Difficulty proving compliance and portfolio quality.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Influences which distribution platforms, broker channels, and product capabilities are trusted to support profitable market reach.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Broker performance dashboards.</li><li>Portfolio performance insight.</li><li>Scalable broker onboarding.</li><li>Compliance evidence and distribution quality reporting.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>MGA / Distribution Owner</h3><p>Makes MGA products easy to access, trade, manage, and trust across broker panels and capacity relationships.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-mga-owner"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-mga-owner"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Responsible for making MGA products easy to access, trade, manage, and trust while maintaining stable capacity relationships and strong distribution performance.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Broker adoption focused.</li><li>Capacity and trading relationship aware.</li><li>Needs clear appetite, reliable quote and bind performance, and migration continuity.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Build broker panel trust.</li><li>Increase broker adoption and trading confidence.</li><li>Maintain stable capacity relationships.</li><li>Understand distribution performance.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Unclear appetite creates low-quality submissions.</li><li>Poor trading observability hides performance issues.</li><li>Migration disruption can damage broker confidence.</li><li>Quote and bind friction reduces adoption.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Shapes whether products, platform journeys, and broker-facing tools are good enough to sustain MGA trading and broker trust.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Trading observability.</li><li>Broker adoption insight.</li><li>Appetite clarity tools.</li><li>Migration continuity support.</li><li>Quote and bind performance reporting.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>Product &amp; Distribution Owner, DA Scheme Broker</h3><p>Owns product or scheme performance across build, governance, distribution, optimisation, and sometimes wholesale relationships.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-da-scheme-broker"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-da-scheme-broker"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Owns delegated authority product or scheme performance across build, governance, distribution, optimisation, and sometimes wholesale relationships.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Product, distribution, and governance led.</li><li>Needs control over delegated authority products and product change.</li><li>Uses data-led insurer reporting to protect capacity and growth.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Grow GWP responsibly.</li><li>Optimise schemes and pricing.</li><li>Maintain stable insurer capacity.</li><li>Use self-service dashboards and no-code configuration.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Limited pricing simulation.</li><li>Slow product change control.</li><li>Inflexible risk domains.</li><li>Weak referral analysis or sandbox environments.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Decides whether platform capabilities support profitable delegated authority growth, governance, insurer reporting, and product optimisation.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>No-code configuration.</li><li>Pricing simulation.</li><li>Referral analysis.</li><li>Flexible risk domains.</li><li>Scheme dashboards and data-led insurer reporting.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>Delegated Authority Broker, Open Market</h3><p>Places risks that may not fit straightforward delegated schemes, with a focus on speed, control, market access, and quote progress visibility.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-open-market-broker"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-open-market-broker"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Places risks that may not fit straightforward delegated schemes and needs low-friction access to markets, appetite, submissions, referrals, and quote progress.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Trading and placement focused.</li><li>Values speed, control, and market access.</li><li>Needs visibility of submission state and referral handling.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Place non-standard risks efficiently.</li><li>Reduce re-keying.</li><li>Understand appetite quickly.</li><li>Maintain stable capacity and quote progress visibility.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Unclear appetite wastes placement time.</li><li>Repeated data entry slows trading.</li><li>Poor submission visibility creates chasing.</li><li>Referral handling can be opaque.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Influences adoption through day-to-day confidence in open market trading speed, quote progress visibility, and capacity access.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Low-friction open market trading.</li><li>Submission tracking.</li><li>Appetite guidance.</li><li>Referral visibility.</li><li>Reduced re-keying and market access tools.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>Underwriter</h3><p>Protects underwriting quality, assesses risk, reviews referrals, manages appetite, and safeguards portfolio performance.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-underwriter"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-underwriter"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Responsible for protecting underwriting quality, assessing risk, reviewing referrals, managing appetite, and ensuring delegated trading does not compromise portfolio performance.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Risk selection and appetite led.</li><li>Needs visibility of referrals, rules, claims, fraud, and partner profitability.</li><li>Balances commercial trading with underwriting discipline.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Protect underwriting quality.</li><li>Understand referral reasons.</li><li>Manage appetite clearly.</li><li>Monitor partner profitability and capacity outcomes.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Limited product or rule visibility.</li><li>Weak claims or fraud insight.</li><li>Hard-to-track referral reasons.</li><li>Insufficient underwriting dashboards.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Approves whether products, rules, and delegated trading models maintain underwriting control and protect portfolio outcomes.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Underwriting dashboards.</li><li>Referral reason analytics.</li><li>Claims and fraud insight.</li><li>Product and rule visibility.</li><li>Capacity outcome reporting.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--distribute">Distribute</span><h3>Distribution CEO / Senior Commercial Owner</h3><p>Owns the strategic and commercial performance of the distribution model, ROI, reach, partner performance, and commercial value.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-distribution-ceo"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-distribution-ceo"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Responsible for the strategic and commercial performance of the distribution model across profitable distribution, ROI, capacity performance, broker adoption, market reach, and operational efficiency.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Strategic, commercial, and outcome-led.</li><li>Needs partner performance, strategic MI, and evidence of commercial value.</li><li>Balances growth ambitions with profitability and operational efficiency.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Increase profitable distribution.</li><li>Prove ROI.</li><li>Grow market reach and broker adoption.</li><li>Understand capacity and partner performance.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Unclear evidence of commercial value.</li><li>Fragmented strategic MI.</li><li>Limited view of broker adoption.</li><li>Hard-to-compare partner performance.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Sets strategic priorities and assesses whether distribution investment delivers commercial value, capacity outcomes, and sustainable growth.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Strategic MI.</li><li>ROI reporting.</li><li>Partner performance insight.</li><li>Broker adoption dashboards.</li><li>Commercial value evidence.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+              </div>
+            </section>
+
+            <section class="personas-stream-section" aria-labelledby="serve-title">
+              <div class="personas-stream-heading">
+                <span class="stream-badge stream-badge--serve">Serve</span>
+                <h2 id="serve-title">Serve</h2>
+                <p>Serve focuses on how agents and consumers use the platform once products and services are live. It covers agent journeys, consumer journeys, call centre and web journeys, self-service, assisted service, policy changes, renewals, documentation, payments, performance, compliance, accessibility, conversion, and customer outcomes.</p>
+              </div>
+              <div class="persona-card-list">
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>High-Volume Agent</h3><p>Handles frequent customer interactions across quotes, renewals, MTAs, payments, document requests, and service queries.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-high-volume-agent"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-high-volume-agent"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Handles frequent customer interactions across inbound calls, outbound calls, quotes, renewals, MTAs, payments, document requests, and service queries.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Speed, accuracy, and compliance focused.</li><li>Works under high workload and time pressure.</li><li>Depends on low latency, clear workflows, and reliable customer context.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Complete interactions quickly and accurately.</li><li>Maintain compliance and customer outcomes.</li><li>Generate documents and take payments efficiently.</li><li>Trust web-to-agent information.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Slow system performance.</li><li>Unclear workflows.</li><li>Manual document or payment steps.</li><li>Inaccurate customer handoff data.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Influences operational feedback and adoption by exposing where service journeys create avoidable time, errors, or compliance risk.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Low-latency journeys.</li><li>Clear workflow guidance.</li><li>Document generation.</li><li>Payment capability.</li><li>Web-to-agent accuracy and workload management.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>Specialist Agent</h3><p>Handles complex, niche, regulated, or non-standard customer journeys that need judgement, guidance, and edge-case support.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-specialist-agent"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-specialist-agent"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Handles complex, niche, regulated, or non-standard customer journeys where specialist product knowledge, judgement, and compliance are important.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Judgement-led and detail-sensitive.</li><li>Works with specialist products, appetite, underwriting guidance, and referrals.</li><li>Needs context for complex risk and edge cases.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Resolve complex journeys confidently.</li><li>Apply appetite and underwriting guidance correctly.</li><li>Stay compliant in regulated scenarios.</li><li>Support niche customer needs.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Insufficient guidance for edge cases.</li><li>Complex referral handling.</li><li>Fragmented risk context.</li><li>Journeys that do not support niche products.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Identifies whether specialist journeys support expert judgement, risk context, and compliance without forcing workarounds.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Specialist journey patterns.</li><li>Underwriting guidance.</li><li>Referral support.</li><li>Complex risk context.</li><li>Edge-case handling and compliance prompts.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>End-to-End Multi-Skilled Agent</h3><p>Supports customers across multiple stages of the policy lifecycle and needs continuity, context, and consistent UI patterns.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-multi-skilled-agent"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-multi-skilled-agent"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Supports customers across quote, sale, payment, MTA, renewal, documentation, and servicing stages of the policy lifecycle.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Lifecycle and continuity focused.</li><li>Needs customer context and consistent UI patterns.</li><li>Values reduced handoffs, first-contact resolution, and a unified omni-system experience.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Resolve customer needs without unnecessary handoffs.</li><li>Keep context across lifecycle stages.</li><li>Manage workload efficiently.</li><li>Deliver consistent service outcomes.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Disconnected systems.</li><li>Inconsistent UI patterns.</li><li>Repeated customer context gathering.</li><li>Workload pressure across varied journeys.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Highlights whether the platform supports cross-journey continuity, first-contact resolution, and operational flexibility.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Unified omni-system experience.</li><li>Consistent UI patterns.</li><li>Customer context persistence.</li><li>Workload management.</li><li>Reduced handoffs.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>Digital Self-Service Consumer</h3><p>Wants to complete insurance tasks independently online with clear cover, fair pricing, accessibility, and confirmation.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-digital-consumer"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-digital-consumer"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Completes insurance tasks independently online, from exploring cover and pricing to progressing service actions and receiving confirmation.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Self-sufficient and digitally confident.</li><li>Values clear cover, fair pricing, accessibility, and frictionless journeys.</li><li>Needs reassurance that tasks are complete and understood.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Complete tasks without calling.</li><li>Understand cover and price.</li><li>Receive clear confirmation.</li><li>Use accessible, low-friction digital journeys.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Unclear cover or pricing.</li><li>Friction that forces channel switching.</li><li>Poor accessibility.</li><li>Uncertain completion or confirmation.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Influences digital journey priorities through behaviour, conversion, drop-off, self-service success, and customer outcome insight.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Self-service journeys.</li><li>Clear confirmations.</li><li>Digital measurement.</li><li>Accessible journey design.</li><li>Customer outcome insights.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>Assisted Channel Consumer</h3><p>Moves between digital and human-supported channels and needs reassurance, continuity, and no repeated information.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-assisted-consumer"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-assisted-consumer"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Moves between digital and human-supported channels when they need reassurance, support, or help completing an insurance journey.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Channel-flexible and reassurance-led.</li><li>Needs web-to-agent handoff, customer context, and clear journey state.</li><li>Wants to avoid repeating information.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Get help without starting again.</li><li>Understand journey progress.</li><li>Receive reassurance at the right moment.</li><li>Complete tasks through the most suitable channel.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Repeated information across channels.</li><li>Lost journey state.</li><li>Poor handoff from web to agent.</li><li>Limited outcome and conversion visibility.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Reveals whether assisted journeys preserve context, support conversion, and create measurable customer outcomes.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Web-to-agent handoff.</li><li>Channel continuity.</li><li>Customer context transfer.</li><li>Journey state visibility.</li><li>Conversion observability and outcome measurement.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>Price and Cover-Conscious Consumer</h3><p>Looks for suitable insurance cover at a price they understand and trust, with clear explanations of changes and exclusions.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-price-cover-consumer"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-price-cover-consumer"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Evaluates whether insurance cover is suitable and whether the price, assumptions, exclusions, and renewal changes are understandable and trustworthy.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Value, clarity, and trust focused.</li><li>Compares cover and price carefully.</li><li>Needs transparent explanations of exclusions, assumptions, and price changes.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Get suitable cover at a fair price.</li><li>Understand what is included or excluded.</li><li>Compare options confidently.</li><li>Feel confident at renewal.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Unclear cover differences.</li><li>Unexpected price changes.</li><li>Hidden assumptions or exclusions.</li><li>Lack of confidence in fair pricing.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Shapes how journeys explain cover, price, renewal changes, and value in a way that supports fair customer outcomes.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>Cover clarity.</li><li>Price transparency.</li><li>Comparison support.</li><li>Renewal explanations.</li><li>Fair pricing communication.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+
+                <article class="persona-card">
+                  <div class="persona-card__header"><div><span class="stream-badge stream-badge--serve">Serve</span><h3>Accessibility or Vulnerability Needs Consumer</h3><p>May need additional support due to accessibility needs, lower digital confidence, financial vulnerability, comprehension challenges, or stress.</p></div><button class="persona-toggle" type="button" aria-expanded="false" aria-controls="persona-accessibility-consumer"><span class="persona-toggle__text">Expand</span><span class="chevron" aria-hidden="true"></span></button></div>
+                  <div class="persona-card__panel" id="persona-accessibility-consumer"><div class="persona-card__inner"><dl class="persona-detail-grid">
+                    <div><dt>Role</dt><dd>Uses insurance journeys while needing additional support due to accessibility needs, lower digital confidence, financial vulnerability, comprehension challenges, or situational stress.</dd></div>
+                    <div><dt>Key characteristics</dt><dd><ul><li>Needs inclusive, plain-language, WCAG-aligned journeys.</li><li>May require assisted support, accessible documentation, and channel choice.</li><li>Consumer Duty and fair outcomes are especially important.</li></ul></dd></div>
+                    <div><dt>Goals and motivations</dt><dd><ul><li>Complete tasks fairly and confidently.</li><li>Choose a suitable support channel.</li><li>Understand documentation and decisions.</li><li>Receive support without disadvantage.</li></ul></dd></div>
+                    <div><dt>Pain points and challenges</dt><dd><ul><li>Inaccessible forms or documents.</li><li>Complex language.</li><li>Limited assisted support.</li><li>Journeys that do not recognise vulnerability or stress.</li></ul></dd></div>
+                    <div><dt>Decision-making role</dt><dd>Provides evidence for inclusive design, accessibility, Consumer Duty, and fair outcome improvements across digital and assisted journeys.</dd></div>
+                    <div><dt>Product opportunities</dt><dd><ul><li>WCAG-aligned journeys.</li><li>Plain-language content.</li><li>Inclusive journey patterns.</li><li>Accessible documentation.</li><li>Channel choice and assisted support.</li></ul></dd></div>
+                  </dl></div></div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="personas-tab-panel" id="panel-value-streams" role="tabpanel" aria-labelledby="tab-value-streams" hidden>
+          <div class="personas-streams">
+            <article class="stream-card">
+              <div><span class="stream-badge">Acquire</span><h2>Acquire</h2></div>
+              <div class="stream-card__body">
+                <div class="stream-card__group"><h3>Purpose</h3><p>Acquire focuses on how customers evaluate, buy, integrate, and adopt Open GI products and services.</p></div>
+                <div class="stream-card__group"><h3>Who it serves</h3><ul><li>CEO / Buyer</li><li>CTO</li><li>Development Manager / Integrator</li><li>CISO</li></ul></div>
+                <div class="stream-card__group"><h3>What this stream helps us understand</h3><ul><li>Why customers choose or reject a platform.</li><li>What commercial and technical confidence they need.</li><li>How API quality, integration, compliance, and stability influence adoption.</li><li>What evidence is needed to support buying and procurement decisions.</li><li>How the platform supports growth, scalability, and operational efficiency.</li></ul></div>
+                <div class="stream-card__group"><h3>Key product themes</h3><ul><li>APIs and developer experience.</li><li>Compliance and regulatory assurance.</li><li>Operational stability and observability.</li><li>Trusted MI and data insights.</li><li>Total cost of ownership.</li><li>Integration confidence.</li><li>Security and third-party risk.</li></ul></div>
+              </div>
+            </article>
+
+            <article class="stream-card">
+              <div><span class="stream-badge stream-badge--distribute">Distribute</span><h2>Distribute</h2></div>
+              <div class="stream-card__body">
+                <div class="stream-card__group"><h3>Purpose</h3><p>Distribute focuses on how insurance products are developed, placed, traded, distributed, monitored, and optimised.</p></div>
+                <div class="stream-card__group"><h3>Who it serves</h3><ul><li>Insurer Distribution / Product Manager</li><li>MGA / Distribution Owner</li><li>Product &amp; Distribution Owner, DA Scheme Broker</li><li>Delegated Authority Broker, Open Market</li><li>Underwriter</li><li>Distribution CEO / Senior Commercial Owner</li></ul></div>
+                <div class="stream-card__group"><h3>What this stream helps us understand</h3><ul><li>How insurer capacity is placed and managed.</li><li>How brokers quote, bind, refer, and trade business.</li><li>How product owners optimise schemes and delegated authority products.</li><li>How underwriting quality and profitability are protected.</li><li>How distribution performance, broker adoption, and ROI are measured.</li></ul></div>
+                <div class="stream-card__group"><h3>Key product themes</h3><ul><li>Quote and bind journeys.</li><li>Broker panel trust.</li><li>Flexible risk domains.</li><li>Broker activation.</li><li>Capacity outcome reporting.</li><li>Referral visibility.</li><li>Scheme performance dashboards.</li><li>Product optimisation.</li><li>Trading observability.</li><li>Partner profitability insight.</li></ul></div>
+              </div>
+            </article>
+
+            <article class="stream-card">
+              <div><span class="stream-badge stream-badge--serve">Serve</span><h2>Serve</h2></div>
+              <div class="stream-card__body">
+                <div class="stream-card__group"><h3>Purpose</h3><p>Serve focuses on how agents and consumers use the platform once products and services are live.</p></div>
+                <div class="stream-card__group"><h3>Who it serves</h3><ul><li>High-Volume Agent</li><li>Specialist Agent</li><li>End-to-End Multi-Skilled Agent</li><li>Digital Self-Service Consumer</li><li>Assisted Channel Consumer</li><li>Price and Cover-Conscious Consumer</li><li>Accessibility or Vulnerability Needs Consumer</li></ul></div>
+                <div class="stream-card__group"><h3>What this stream helps us understand</h3><ul><li>How agents complete operational and customer-facing tasks.</li><li>How consumers move through digital, assisted, and call centre journeys.</li><li>Where friction appears in quote, sale, MTA, renewal, payment, and document journeys.</li><li>How accessibility, self-service, compliance, and customer outcomes are supported.</li><li>How performance and usability affect both agent productivity and customer experience.</li></ul></div>
+                <div class="stream-card__group"><h3>Key product themes</h3><ul><li>Customisable and adaptive agent UI.</li><li>Low latency and high performance processing.</li><li>Regulatory, quality, and script compliance.</li><li>Workload management.</li><li>Document and pack generation.</li><li>Payment capability.</li><li>Unified omni-system experience.</li><li>Web-to-agent accuracy.</li><li>Self-service.</li><li>Accessibility and inclusive journeys.</li><li>Customer outcome measurement.</li></ul></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <p>Design Team Research Library</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="personas.js"></script>
+</body>
+</html>
