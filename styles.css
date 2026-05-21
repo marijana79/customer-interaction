@@ -704,6 +704,324 @@ h3 {
   text-align: center;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.sidebar-card--link {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  color: #c0c8d0;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.sidebar-card--link:hover,
+.sidebar-card--link.sidebar-card--active {
+  border-color: var(--color-nav-border);
+  background: rgba(255, 255, 255, 0.075);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.button--secondary {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  box-shadow: var(--shadow-subtle);
+}
+
+.button--secondary:hover {
+  border-color: rgba(47, 99, 255, 0.34);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+}
+
+.recommend-page {
+  gap: var(--space-6);
+}
+
+.recommend-hero,
+.recommender-shell,
+.recommendation-section {
+  border: 1px solid rgba(211, 202, 189, 0.82);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 253, 248, 0.88);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(16px);
+}
+
+.recommend-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(250px, 0.75fr);
+  gap: clamp(var(--space-5), 4vw, var(--space-8));
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4.75rem);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(79, 140, 255, 0.18), transparent 18rem),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.96), rgba(248, 243, 235, 0.82));
+}
+
+.recommend-hero h1 {
+  margin-bottom: var(--space-4);
+}
+
+.recommend-hero__intro {
+  max-width: 850px;
+  margin-bottom: 0;
+  color: #38434f;
+  font-size: clamp(1.08rem, 1.8vw, 1.32rem);
+  line-height: 1.55;
+}
+
+.recommend-hero__aside {
+  display: grid;
+  align-content: end;
+  gap: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-subtle);
+}
+
+.recommend-hero__aside p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.recommend-hero__number {
+  color: var(--color-primary-dark);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.recommender-shell,
+.recommendation-section {
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+}
+
+.recommender-heading {
+  align-items: flex-start;
+}
+
+.recommender-form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.criteria-card {
+  display: grid;
+  gap: var(--space-4);
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-subtle);
+}
+
+.criteria-card legend {
+  padding: 0 var(--space-2);
+  color: var(--color-text);
+  font-size: clamp(1.05rem, 1.5vw, 1.24rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.criteria-option {
+  position: relative;
+  display: grid;
+  min-height: 64px;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: rgba(248, 243, 235, 0.64);
+  color: var(--color-muted);
+  padding: var(--space-3) var(--space-4) var(--space-3) 2.85rem;
+  line-height: 1.35;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.criteria-option:hover {
+  border-color: var(--color-border-strong);
+  background: #fff;
+  color: var(--color-text);
+  transform: translateY(-1px);
+}
+
+.criteria-option input {
+  position: absolute;
+  left: var(--space-4);
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--color-primary);
+}
+
+.criteria-option:has(input:checked) {
+  border-color: rgba(47, 99, 255, 0.38);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-dark);
+  box-shadow: 0 0 0 3px rgba(79, 140, 255, 0.1);
+}
+
+.criteria-option:has(input:focus-visible) {
+  outline: 3px solid rgba(79, 140, 255, 0.42);
+  outline-offset: 3px;
+}
+
+.recommender-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  justify-content: space-between;
+  border: 1px solid var(--color-border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: var(--space-4);
+}
+
+.recommender-status {
+  margin: 0;
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.recommendation-result {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.recommendation-empty,
+.recommendation-card,
+.also-consider-card {
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-subtle);
+}
+
+.recommendation-empty {
+  display: grid;
+  gap: var(--space-2);
+  min-height: 180px;
+  place-items: center;
+  text-align: center;
+}
+
+.recommendation-empty h3,
+.recommendation-empty p {
+  margin: 0;
+}
+
+.recommendation-empty p {
+  max-width: 620px;
+  color: var(--color-muted);
+}
+
+.recommendation-card {
+  overflow: hidden;
+  border-color: rgba(47, 99, 255, 0.24);
+  background:
+    linear-gradient(135deg, rgba(237, 243, 255, 0.95), rgba(255, 255, 255, 0.82)),
+    var(--color-surface-strong);
+}
+
+.recommendation-card__header {
+  display: grid;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.recommendation-label {
+  width: fit-content;
+  border: 1px solid rgba(47, 99, 255, 0.18);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--color-primary-dark);
+  padding: 0.24rem 0.68rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.recommendation-card h3 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2.35rem);
+}
+
+.recommendation-description,
+.recommendation-reason {
+  max-width: 900px;
+  margin: 0;
+  color: #38434f;
+  font-size: 1.02rem;
+}
+
+.recommendation-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.recommendation-detail {
+  border: 1px solid rgba(211, 202, 189, 0.74);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: var(--space-4);
+}
+
+.recommendation-detail--wide {
+  grid-column: 1 / -1;
+}
+
+.recommendation-detail h4,
+.also-consider-card h3 {
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.recommendation-detail p,
+.also-consider-card p {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.recommendation-detail ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--color-muted);
+}
+
+.also-consider-card {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.also-consider-card h3 {
+  margin: 0;
+}
+
 @media (max-width: 1180px) {
   .app-shell {
     grid-template-columns: 260px minmax(0, 1fr);
@@ -711,12 +1029,15 @@ h3 {
 
   .hero,
   .decision-grid,
-  .principles-grid {
+  .principles-grid,
+  .recommend-hero,
+  .recommendation-detail-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .hero__content,
-  .hero__panel {
+  .hero__panel,
+  .recommend-hero > * {
     grid-column: 1 / -1;
   }
 }
@@ -742,7 +1063,8 @@ h3 {
     border-radius: 18px;
   }
 
-  .side-nav ul {
+  .side-nav ul,
+  .option-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -757,13 +1079,19 @@ h3 {
   .hero,
   .decision-grid,
   .principles-grid,
-  .detail-grid {
+  .detail-grid,
+  .recommend-hero,
+  .recommendation-detail-grid {
     grid-template-columns: 1fr;
   }
 
   .section-heading--inline {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .recommendation-detail--wide {
+    grid-column: auto;
   }
 
   .button {
@@ -791,7 +1119,9 @@ h3 {
   }
 
   .hero__panel,
-  .side-nav ul {
+  .side-nav ul,
+  .option-grid,
+  .personas-summary {
     grid-template-columns: 1fr;
   }
 

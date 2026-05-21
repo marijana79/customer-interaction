@@ -36,10 +36,10 @@
           </ul>
         </nav>
 
-        <div class="sidebar-card">
-          <p class="sidebar-card__title">Choosing a method</p>
-          <p>Match the conversation type to the decision the team needs to make.</p>
-        </div>
+        <a class="sidebar-card sidebar-card--link" href="#recommend-approach">
+          <p class="sidebar-card__title">Recommend an approach</p>
+          <p>Answer a few prompts to match the conversation type to the decision the team needs to make.</p>
+        </a>
       </div>
     </aside>
 
@@ -332,6 +332,119 @@
         </div>
       </section>
 
+      </div>
+
+
+      <div class="page-view recommend-page" id="recommend-approach-view" data-view="recommend-approach" hidden>
+        <section class="recommend-hero" id="recommend-approach" aria-labelledby="recommend-page-title">
+          <div>
+            <p class="eyebrow">Interview recommender</p>
+            <h1 id="recommend-page-title">Recommend an approach</h1>
+            <p class="recommend-hero__intro">Use this practical decision-support tool to choose the most suitable customer interview approach based on the research goal, persona type, product stage, confidence level, and the type of evidence you need.</p>
+          </div>
+          <div class="recommend-hero__aside" aria-label="How the recommender works">
+            <span class="recommend-hero__number">3+</span>
+            <p>Select at least three criteria to generate a recommendation. The result updates as your selections change.</p>
+          </div>
+        </section>
+
+        <section class="recommender-shell" aria-labelledby="criteria-title">
+          <div class="section-heading section-heading--inline recommender-heading">
+            <div>
+              <p class="eyebrow">Criteria</p>
+              <h2 id="criteria-title">Tell us what you need to learn</h2>
+              <p>Choose one option in each area. You can leave uncertain areas blank and come back later.</p>
+            </div>
+            <button class="button button--secondary" id="recommend-reset" type="button">Reset</button>
+          </div>
+
+          <form class="recommender-form" id="approach-recommender" aria-describedby="recommender-help">
+            <p class="visually-hidden" id="recommender-help">The recommendation updates automatically when you choose criteria. Select at least three criteria for a result.</p>
+
+            <fieldset class="criteria-card">
+              <legend>Research purpose</legend>
+              <div class="option-grid">
+                <label class="criteria-option"><input type="radio" name="purpose" value="current-ways"><span>Understand current ways of working</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="new-opportunity"><span>Explore a new opportunity or problem space</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="validate-feature"><span>Validate a feature or concept</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="review-workflow"><span>Review an existing workflow or process</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="post-release"><span>Understand feedback after release</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="innovation"><span>Identify innovation opportunities</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="exceptions"><span>Investigate pain points or exceptions</span></label>
+                <label class="criteria-option"><input type="radio" name="purpose" value="decision-making"><span>Understand decision-making and priorities</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="criteria-card">
+              <legend>Persona type</legend>
+              <div class="option-grid">
+                <label class="criteria-option"><input type="radio" name="persona" value="end-user"><span>End user / operational user</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="admin"><span>Admin or configuration user</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="manager"><span>Manager or team lead</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="decision-maker"><span>Decision maker / senior stakeholder</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="technical"><span>Technical or integration stakeholder</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="customer-facing"><span>Customer-facing internal team</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="mixed"><span>Mixed persona group</span></label>
+                <label class="criteria-option"><input type="radio" name="persona" value="unknown"><span>Unknown or unclear persona</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="criteria-card">
+              <legend>Product or design stage</legend>
+              <div class="option-grid">
+                <label class="criteria-option"><input type="radio" name="stage" value="early-discovery"><span>Early discovery</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="problem-framing"><span>Problem framing</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="concept-exploration"><span>Concept exploration</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="prototype-validation"><span>Prototype validation</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="pre-build"><span>Pre-build design refinement</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="post-release"><span>Post-release learning</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="ongoing-feedback"><span>Ongoing customer feedback</span></label>
+                <label class="criteria-option"><input type="radio" name="stage" value="workflow-mapping"><span>Process or workflow mapping</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="criteria-card">
+              <legend>Evidence needed</legend>
+              <div class="option-grid">
+                <label class="criteria-option"><input type="radio" name="evidence" value="behaviours"><span>Behaviours and current workflow</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="pain-points"><span>Pain points and blockers</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="needs"><span>Needs, motivations, and goals</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="feature-feedback"><span>Feature feedback</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="process-gaps"><span>Process gaps</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="decision-criteria"><span>Decision criteria</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="operational-exceptions"><span>Operational exceptions</span></label>
+                <label class="criteria-option"><input type="radio" name="evidence" value="adoption-barriers"><span>Adoption or usage barriers</span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="criteria-card">
+              <legend>Session format</legend>
+              <div class="option-grid">
+                <label class="criteria-option"><input type="radio" name="format" value="one-to-one"><span>1:1 customer interview</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="small-group"><span>Small group conversation</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="feedback-session"><span>Customer feedback session</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="workflow-walkthrough"><span>Workflow walkthrough</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="prototype-review"><span>Prototype review</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="stakeholder-interview"><span>Stakeholder interview</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="internal-expert"><span>Internal expert interview</span></label>
+                <label class="criteria-option"><input type="radio" name="format" value="not-sure"><span>Not sure yet</span></label>
+              </div>
+            </fieldset>
+
+            <div class="recommender-actions">
+              <button class="button" id="recommend-submit" type="submit">Get recommendation</button>
+              <p class="recommender-status" id="recommend-status" aria-live="polite">0 of 5 criteria selected</p>
+            </div>
+          </form>
+        </section>
+
+        <section class="recommendation-section" aria-labelledby="recommendation-title">
+          <div class="section-heading">
+            <p class="eyebrow">Result</p>
+            <h2 id="recommendation-title">Recommendation</h2>
+          </div>
+          <div class="recommendation-result" id="recommendation-result" aria-live="polite"></div>
+        </section>
       </div>
 
       <div class="page-view personas-page" id="personas-view" data-view="personas" hidden>

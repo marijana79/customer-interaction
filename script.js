@@ -11,6 +11,12 @@ const personaTabs = Array.from(document.querySelectorAll(".personas-tab"));
 const personaPanels = Array.from(document.querySelectorAll(".personas-tab-panel"));
 const personaExpandAllButton = document.querySelector("#personas-expand-all");
 const personaCollapseAllButton = document.querySelector("#personas-collapse-all");
+const approachRecommenderForm = document.querySelector("#approach-recommender");
+const recommendationResult = document.querySelector("#recommendation-result");
+const recommendStatus = document.querySelector("#recommend-status");
+const recommendResetButton = document.querySelector("#recommend-reset");
+const recommendSubmitButton = document.querySelector("#recommend-submit");
+const sidebarRecommendLink = document.querySelector(".sidebar-card--link[href='#recommend-approach']");
 
 const personaStreams = [
   {
@@ -738,15 +744,373 @@ const updateOpenPanelHeights = () => {
   });
 };
 
+
+const interviewApproaches = {
+  discovery: {
+    name: "Customer discovery interview",
+    description: "A broad, open conversation for understanding a problem space, current behaviours, motivations, and unmet needs before narrowing on a solution.",
+    bestUsedWhen: "You need to understand what people are trying to achieve, what gets in their way, and whether the team is solving the right problem.",
+    learn: "Current behaviours, needs, motivations, goals, workarounds, pain points, language customers use, and opportunity areas.",
+    format: "Usually a 1:1 customer interview with an end user or operational user. Use a semi-structured guide and ask for recent examples.",
+    preparation: [
+      "Define the research objective and the decision it should support.",
+      "Confirm the persona type and recruit people who have recent experience of the problem.",
+      "Prepare 5 to 7 open questions about real work, goals, blockers, and context.",
+      "Ask for real examples rather than opinions only.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "Can you walk me through the last time you needed to do this?",
+      "What were you trying to achieve?",
+      "What made it harder or slower than expected?",
+      "What workarounds have you created?",
+      "What would make this easier or more valuable?"
+    ]
+  },
+  workflow: {
+    name: "Workflow/process walkthrough",
+    description: "A step-by-step walkthrough for understanding how people complete a process, where handoffs happen, what tools they use, and where friction appears.",
+    bestUsedWhen: "The team needs a reliable view of the current process before changing a workflow, designing a journey, or mapping operational requirements.",
+    learn: "Process steps, roles, tools, handoffs, decision points, manual work, exceptions, dependencies, and friction in the actual way of working.",
+    format: "A workflow walkthrough with one operational user or a small group who can show the process from start to finish.",
+    preparation: [
+      "Define the workflow boundary, start point, and end point.",
+      "Confirm the persona type and recruit people who complete or manage the workflow.",
+      "Prepare prompts for steps, tools, handoffs, exceptions, and decision points.",
+      "Ask participants to show artefacts, screens, templates, or examples where possible.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "What happens first, and what tells you to start?",
+      "Which tools, people, or documents are involved?",
+      "Where do delays, errors, or rework happen?",
+      "What exceptions change the normal process?",
+      "What information do you need before you can move forward?"
+    ]
+  },
+  feature: {
+    name: "Feature discovery interview",
+    description: "A focused conversation for understanding whether a potential feature solves a real problem and what users would expect from it.",
+    bestUsedWhen: "There is a feature idea, request, or backlog item, but the team still needs to understand the need, value, expected outcome, and context of use.",
+    learn: "Feature goals, user needs, expectations, constraints, perceived value, acceptance considerations, risks, and assumptions to validate.",
+    format: "A 1:1 customer interview or small group conversation using scenarios, problem statements, or lightweight concept prompts.",
+    preparation: [
+      "Define the feature assumption and the decision you need to make.",
+      "Confirm which persona would use, configure, buy, or be affected by the feature.",
+      "Prepare 5 to 7 questions about the underlying problem, frequency, value, and expected outcome.",
+      "Ask for real examples rather than opinions only.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "What problem would this feature help you solve?",
+      "When would you expect to use it?",
+      "What information or controls would you need?",
+      "What would make it valuable or not valuable?",
+      "What would you do if this feature did not exist?"
+    ]
+  },
+  prototype: {
+    name: "Concept/prototype review",
+    description: "A structured review for testing a design direction, early concept, wireframe, or clickable prototype before committing to build.",
+    bestUsedWhen: "You need to learn whether a concept is understandable, useful, credible, and aligned to the participant’s workflow or decision-making context.",
+    learn: "Comprehension issues, expectations, missing information, perceived usefulness, usability risks, design improvements, and confidence in the direction.",
+    format: "A prototype review or concept feedback session using a scenario, wireframe, mock-up, or clickable prototype.",
+    preparation: [
+      "Define what the concept needs to prove or disprove.",
+      "Confirm the persona type and choose scenarios that match their real context.",
+      "Prepare 5 to 7 open questions and tasks around comprehension, usefulness, and fit.",
+      "Ask participants to think aloud and compare the concept with how they work today.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "What do you think this is for?",
+      "What would you do next?",
+      "Where would this fit in your current workflow?",
+      "What feels useful, unclear, or missing?",
+      "What would need to change before this felt ready?"
+    ]
+  },
+  feedback: {
+    name: "Customer feedback session",
+    description: "A structured session for gathering feedback on an existing experience, recent change, known issue, or live product area.",
+    bestUsedWhen: "The team needs customer sentiment and evidence about what is working, what is not, and what to improve after release or during ongoing feedback cycles.",
+    learn: "Feedback themes, improvement opportunities, customer sentiment, adoption barriers, friction points, support drivers, and backlog candidates.",
+    format: "A customer feedback session, 1:1 interview, or small group conversation focused on a live experience or recent change.",
+    preparation: [
+      "Define the area of the experience you need feedback on.",
+      "Confirm which customers have recent or repeated exposure to it.",
+      "Prepare 5 to 7 questions about usage, value, friction, and impact.",
+      "Ask for real examples rather than opinions only.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "How is this working for you today?",
+      "When did you last use it, and what happened?",
+      "What works well and what causes friction?",
+      "What stops people from using it more often?",
+      "What one improvement would have the biggest impact?"
+    ]
+  },
+  innovation: {
+    name: "Innovation/opportunity interview",
+    description: "A future-facing conversation for exploring unmet needs and areas where the product could create new value.",
+    bestUsedWhen: "The team is looking beyond immediate delivery and wants to understand emerging needs, strategic opportunities, and where future product value could come from.",
+    learn: "Unmet needs, emerging behaviours, future goals, inefficient workflows, opportunity spaces, strategic themes, and potential bets for deeper discovery.",
+    format: "A 1:1 customer interview or strategic small group conversation with prompts about future work, market change, and desired outcomes.",
+    preparation: [
+      "Define the opportunity area or future-facing question.",
+      "Recruit customers or stakeholders with a broad view of change and unmet need.",
+      "Prepare open prompts about future goals, weak signals, constraints, and ideal outcomes.",
+      "Ask for real examples from today before asking participants to imagine the future.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "How do you expect this area of work to change?",
+      "What problems feel unresolved today?",
+      "Where do current tools limit what you can do?",
+      "What would create meaningful new value?",
+      "If this process worked perfectly, what would be different?"
+    ]
+  },
+  exception: {
+    name: "Exception/pain point interview",
+    description: "A diagnostic conversation for understanding outliers, failures, workarounds, edge cases, operational issues, and moments where users need to intervene.",
+    bestUsedWhen: "The team needs to understand why a workflow breaks down, where users get blocked, or what happens outside the happy path.",
+    learn: "Pain points, blockers, exceptions, failure modes, workarounds, escalation paths, operational impact, root causes, and risk areas.",
+    format: "A 1:1 customer interview, workflow walkthrough, or internal expert interview focused on specific incidents, edge cases, or exceptions.",
+    preparation: [
+      "Define the exception, blocker, or failure mode you need to understand.",
+      "Recruit people who have experienced or handled the issue recently.",
+      "Prepare prompts about triggers, impact, workarounds, escalation, and recovery.",
+      "Ask for concrete examples, artefacts, and timelines rather than general frustration.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "Can you describe the last time this went wrong?",
+      "What triggered the issue?",
+      "What did you do to recover or work around it?",
+      "Who else had to get involved?",
+      "What would prevent this from happening again?"
+    ]
+  },
+  decision: {
+    name: "Decision-making interview",
+    description: "A conversation for understanding how users or stakeholders prioritise work, choose what to do first, assess risk, and make trade-offs.",
+    bestUsedWhen: "The team needs to understand priorities, buying or operational criteria, risk assessment, trade-offs, or what influences product and workflow decisions.",
+    learn: "Decision criteria, priorities, constraints, risk signals, trade-offs, approval paths, stakeholder influence, and evidence needed for confidence.",
+    format: "A stakeholder interview, 1:1 customer interview, or small group conversation with managers, team leads, decision makers, or senior stakeholders.",
+    preparation: [
+      "Define the decision or prioritisation moment you need to understand.",
+      "Confirm who influences, approves, uses, or is affected by the decision.",
+      "Prepare 5 to 7 questions about criteria, evidence, risk, trade-offs, and constraints.",
+      "Ask for a recent decision and unpack what happened step by step.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "Can you walk me through a recent decision like this?",
+      "What criteria mattered most?",
+      "What evidence gave you confidence?",
+      "What trade-offs did you have to make?",
+      "Who else influenced or approved the decision?"
+    ]
+  },
+  internal: {
+    name: "Internal expert interview",
+    description: "A knowledge-gathering conversation with Customer Success, Support, Product, Technical, or other internal teams before or alongside customer research.",
+    bestUsedWhen: "The team needs context quickly, the customer persona is unclear, or internal teams hold useful evidence about customer problems, technical constraints, support issues, and known patterns.",
+    learn: "Known customer issues, support themes, technical constraints, common requests, account context, risk areas, terminology, and hypotheses for customer research.",
+    format: "An internal expert interview with Support, Customer Success, Product, Engineering, Technical, Sales, or other customer-facing teams.",
+    preparation: [
+      "Define what context you need before speaking with customers.",
+      "Identify internal teams with first-hand exposure to the customer issue.",
+      "Prepare prompts about known patterns, evidence, exceptions, and customer impact.",
+      "Ask for examples, ticket themes, call notes, artefacts, or follow-up contacts.",
+      "Capture evidence, quotes, behaviours, and follow-up actions.",
+      "Share findings back into the research repository."
+    ],
+    questions: [
+      "What are customers most often trying to do in this area?",
+      "What problems or exceptions do you hear about repeatedly?",
+      "Which personas are involved or affected?",
+      "What evidence already exists?",
+      "Which assumptions should we validate with customers?"
+    ]
+  }
+};
+
+const recommendationScores = {
+  purpose: {
+    "current-ways": { workflow: 4, discovery: 3 },
+    "new-opportunity": { discovery: 4, innovation: 3 },
+    "validate-feature": { prototype: 4, feature: 3 },
+    "review-workflow": { workflow: 5, exception: 2 },
+    "post-release": { feedback: 5, exception: 1 },
+    innovation: { innovation: 5, discovery: 2 },
+    exceptions: { exception: 5, workflow: 2 },
+    "decision-making": { decision: 5, innovation: 1 }
+  },
+  persona: {
+    "end-user": { discovery: 2, workflow: 2, exception: 2, prototype: 2 },
+    admin: { workflow: 3, discovery: 2, feature: 2 },
+    manager: { decision: 3, workflow: 2, feedback: 2 },
+    "decision-maker": { decision: 4, innovation: 3 },
+    technical: { internal: 3, workflow: 2, feature: 2 },
+    "customer-facing": { internal: 4, feedback: 2, exception: 2 },
+    mixed: { discovery: 2, decision: 2, feedback: 2 },
+    unknown: { discovery: 3, internal: 3 }
+  },
+  stage: {
+    "early-discovery": { discovery: 4, innovation: 2 },
+    "problem-framing": { discovery: 3, workflow: 2, exception: 2 },
+    "concept-exploration": { feature: 3, prototype: 3, innovation: 1 },
+    "prototype-validation": { prototype: 5, feature: 2 },
+    "pre-build": { prototype: 3, feature: 3, workflow: 1 },
+    "post-release": { feedback: 5, exception: 2 },
+    "ongoing-feedback": { feedback: 4, discovery: 1 },
+    "workflow-mapping": { workflow: 5, exception: 1 }
+  },
+  evidence: {
+    behaviours: { workflow: 4, discovery: 3 },
+    "pain-points": { exception: 3, discovery: 2, workflow: 2 },
+    needs: { discovery: 4, innovation: 2 },
+    "feature-feedback": { feature: 3, prototype: 3, feedback: 2 },
+    "process-gaps": { workflow: 4, exception: 2 },
+    "decision-criteria": { decision: 5 },
+    "operational-exceptions": { exception: 5, workflow: 2 },
+    "adoption-barriers": { feedback: 3, discovery: 2, decision: 2 }
+  },
+  format: {
+    "one-to-one": { discovery: 2, feature: 2, decision: 1 },
+    "small-group": { feedback: 2, decision: 2, innovation: 1 },
+    "feedback-session": { feedback: 4 },
+    "workflow-walkthrough": { workflow: 4, exception: 2 },
+    "prototype-review": { prototype: 4 },
+    "stakeholder-interview": { decision: 4, innovation: 1 },
+    "internal-expert": { internal: 5 },
+    "not-sure": { discovery: 1, internal: 1 }
+  }
+};
+
+const getSelectedCriteria = () => {
+  if (!approachRecommenderForm) {
+    return [];
+  }
+
+  return Array.from(new FormData(approachRecommenderForm).entries()).filter(([, value]) => value);
+};
+
+const escapeHtml = (value) => String(value).replace(/[&<>'"]/g, (character) => ({
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  "'": "&#39;",
+  '"': "&quot;"
+}[character]));
+
+const renderList = (items) => items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+const getRecommendationScores = (selectedCriteria) => {
+  const scores = Object.fromEntries(Object.keys(interviewApproaches).map((key) => [key, 0]));
+
+  selectedCriteria.forEach(([criterion, value]) => {
+    const scoringRules = recommendationScores[criterion]?.[value] || {};
+
+    Object.entries(scoringRules).forEach(([approach, points]) => {
+      scores[approach] += points;
+    });
+  });
+
+  return scores;
+};
+
+const buildRecommendationReason = (approach, selectedCount, score) => `This approach fits because ${selectedCount} selected criteria point toward ${approach.name.toLowerCase()} as the strongest match. It scored ${score} points against the selected purpose, persona, stage, evidence, and session format.`;
+
+const renderRecommendationCard = (approachKey, score, selectedCount, label = "Primary recommendation") => {
+  const approach = interviewApproaches[approachKey];
+
+  return `
+    <article class="recommendation-card">
+      <div class="recommendation-card__header">
+        <span class="recommendation-label">${escapeHtml(label)}</span>
+        <h3>${escapeHtml(approach.name)}</h3>
+        <p class="recommendation-description">${escapeHtml(approach.description)}</p>
+        <p class="recommendation-reason">${escapeHtml(buildRecommendationReason(approach, selectedCount, score))}</p>
+      </div>
+      <div class="recommendation-detail-grid">
+        <div class="recommendation-detail"><h4>Best used when</h4><p>${escapeHtml(approach.bestUsedWhen)}</p></div>
+        <div class="recommendation-detail"><h4>What you will learn</h4><p>${escapeHtml(approach.learn)}</p></div>
+        <div class="recommendation-detail recommendation-detail--wide"><h4>Suggested session format</h4><p>${escapeHtml(approach.format)}</p></div>
+        <div class="recommendation-detail"><h4>Suggested preparation steps</h4><ul>${renderList(approach.preparation)}</ul></div>
+        <div class="recommendation-detail"><h4>Example questions</h4><ul>${renderList(approach.questions)}</ul></div>
+      </div>
+    </article>
+  `;
+};
+
+const renderAlsoConsiderCard = (approachKey, score) => {
+  const approach = interviewApproaches[approachKey];
+
+  return `
+    <aside class="also-consider-card" aria-label="Also consider">
+      <span class="recommendation-label">Also consider</span>
+      <h3>${escapeHtml(approach.name)}</h3>
+      <p>${escapeHtml(approach.description)}</p>
+      <p><strong>Why:</strong> This was a close secondary match with ${score} points. Use it if the conversation needs to emphasise this angle more than the primary recommendation.</p>
+    </aside>
+  `;
+};
+
+const updateRecommendation = () => {
+  if (!approachRecommenderForm || !recommendationResult) {
+    return;
+  }
+
+  const selectedCriteria = getSelectedCriteria();
+  const selectedCount = selectedCriteria.length;
+
+  if (recommendStatus) {
+    recommendStatus.textContent = `${selectedCount} of 5 criteria selected`;
+  }
+
+  if (selectedCount < 3) {
+    recommendationResult.innerHTML = `
+      <div class="recommendation-empty">
+        <div>
+          <h3>Your recommendation will appear here</h3>
+          <p>Select at least three criteria to receive a suggested customer interview approach, why it fits, preparation steps, example questions, and any close secondary match.</p>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  const scores = getRecommendationScores(selectedCriteria);
+  const rankedApproaches = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+  const [primaryKey, primaryScore] = rankedApproaches[0];
+  const [secondaryKey, secondaryScore] = rankedApproaches[1];
+  const shouldShowSecondary = secondaryScore > 0 && (secondaryScore === primaryScore || primaryScore - secondaryScore <= 2);
+
+  recommendationResult.innerHTML = renderRecommendationCard(primaryKey, primaryScore, selectedCount) + (shouldShowSecondary ? renderAlsoConsiderCard(secondaryKey, secondaryScore) : "");
+};
+
 const showPage = (pageName) => {
-  const targetPage = pageName === "personas" ? "personas" : "interviews";
+  const validPages = ["interviews", "personas", "recommend-approach"];
+  const targetPage = validPages.includes(pageName) ? pageName : "interviews";
 
   pageViews.forEach((view) => {
     view.hidden = view.dataset.view !== targetPage;
   });
 
   navLinks.forEach((link) => {
-    const linkPage = link.getAttribute("href") === "#personas" ? "personas" : "interviews";
+    const linkPage = link.getAttribute("href").replace("#", "") || "interviews";
     const isActive = linkPage === targetPage;
 
     link.classList.toggle("side-nav__link--active", isActive);
@@ -757,6 +1121,17 @@ const showPage = (pageName) => {
       link.removeAttribute("aria-current");
     }
   });
+
+  if (sidebarRecommendLink) {
+    const isRecommendActive = targetPage === "recommend-approach";
+    sidebarRecommendLink.classList.toggle("sidebar-card--active", isRecommendActive);
+
+    if (isRecommendActive) {
+      sidebarRecommendLink.setAttribute("aria-current", "page");
+    } else {
+      sidebarRecommendLink.removeAttribute("aria-current");
+    }
+  }
 };
 
 const getPageFromHash = () => window.location.hash.replace("#", "") || "interviews";
@@ -927,6 +1302,26 @@ if (personaCollapseAllButton) {
     });
   });
 }
+
+
+if (approachRecommenderForm) {
+  approachRecommenderForm.addEventListener("change", updateRecommendation);
+  approachRecommenderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    updateRecommendation();
+    recommendationResult?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+}
+
+if (recommendResetButton && approachRecommenderForm) {
+  recommendResetButton.addEventListener("click", () => {
+    approachRecommenderForm.reset();
+    updateRecommendation();
+    recommendSubmitButton?.focus();
+  });
+}
+
+updateRecommendation();
 
 window.addEventListener("hashchange", () => {
   showPage(getPageFromHash());
