@@ -596,6 +596,15 @@ h3 {
   padding: clamp(1.6rem, 3.5vw, 3rem);
 }
 
+
+.section-shell--flat {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+
 .section-heading {
   max-width: 880px;
   margin-bottom: var(--space-6);
