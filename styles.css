@@ -342,7 +342,7 @@ a:focus-visible {
   border: 0.888889px solid rgba(42, 38, 34, 0.16);
   border-radius: 999px;
   box-sizing: border-box;
-  color: rgb(42, 38, 34);
+  color: rgba(42, 38, 34, 0.72);
   cursor: text;
   display: inline-block;
   font-family: proxima-soft, proxima-soft, Arial, sans-serif;
@@ -362,7 +362,7 @@ a:focus-visible {
   font-variant-numeric: normal;
   font-variant-position: normal;
   font-variation-settings: normal;
-  font-weight: 300;
+  font-weight: 200;
   height: 46.2708px;
   letter-spacing: normal;
   line-height: 18.9px;
@@ -386,6 +386,10 @@ a:focus-visible {
   word-spacing: 0px;
   -webkit-rtl-ordering: logical;
   -webkit-border-image: none;
+}
+
+.topbar-search input::placeholder {
+  color: rgba(42, 38, 34, 0.5);
 }
 .topbar-action {
   align-items: center;
