@@ -46,6 +46,10 @@
 
     <main id="main-content" class="main-content">
       <header class="site-topbar" aria-label="Quick actions">
+        <div class="toolbar topbar-search" role="search">
+          <label for="card-search">Search interview types</label>
+          <input id="card-search" type="search" placeholder="Search by goal, method, output, or question..." autocomplete="off">
+        </div>
         <a class="topbar-action" href="#recommend-approach">Recommend an approach</a>
       </header>
 
@@ -134,17 +138,6 @@
             </div>
             <div class="section-actions">
               <button class="button" id="toggle-all" type="button">Expand all</button>
-            </div>
-          </div>
-
-          <div class="library-controls">
-            <div class="toolbar" role="search">
-              <label for="card-search">Search interview types</label>
-              <input id="card-search" type="search" placeholder="Search by goal, method, output, or question..." autocomplete="off">
-            </div>
-            <div class="library-note">
-              <span>Tip</span>
-              <p>Search for terms like workflow, adoption, usability, feedback, discovery, or strategy.</p>
             </div>
           </div>
 
