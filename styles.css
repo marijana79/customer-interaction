@@ -309,7 +309,7 @@ a:focus-visible {
   font-size: 14px;
   font-weight: 300;
   height: 79.1597px;
-  justify-content: flex-end;
+  justify-content: space-between;
   line-height: 18.9px;
   margin: 0 calc(var(--space-5) * -1);
   padding: 16px;
@@ -322,6 +322,18 @@ a:focus-visible {
   z-index: 20;
 }
 
+
+.topbar-search {
+  width: min(100%, 520px);
+}
+
+.topbar-search label {
+  font-size: 0.85rem;
+}
+
+.topbar-search input {
+  padding: 0.72rem 1rem;
+}
 .topbar-action {
   align-items: center;
   background-color: rgb(42, 38, 34);
@@ -1203,6 +1215,10 @@ h3 {
     top: 0;
     border-radius: 0;
     width: auto;
+  }
+
+  .topbar-search {
+    width: 100%;
   }
 
   .topbar-action {
