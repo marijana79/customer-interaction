@@ -530,18 +530,38 @@ h3 {
 }
 
 .hero__action-link {
-  color: var(--black);
-  background: var(--white);
-  border: 1px solid var(--black);
-  border-radius: 0.5rem;
-  padding: 0.85rem 1rem 0.95rem;
-  text-decoration: none;
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-weight: 300;
+  background-attachment: scroll;
+  background-clip: border-box;
+  color: var(--black);
+  background-color: rgb(255, 255, 255);
+  background-image: none;
+  background-origin: padding-box;
+  background-position-x: 0%;
+  background-position-y: 0%;
+  background-repeat: repeat;
+  background-size: auto;
+  border: 0.888889px solid rgb(42, 38, 34);
+  border-radius: 8px;
+  box-sizing: border-box;
+  column-gap: 8px;
   cursor: pointer;
+  display: flex;
+  font-family: proxima-soft, proxima-soft, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  height: 49.4653px;
+  justify-content: center;
+  line-height: 18.9px;
+  padding: 13.6px 16px 15.2px;
+  row-gap: 8px;
+  text-decoration: none;
+  text-decoration-color: rgb(42, 38, 34);
+  text-decoration-line: none;
+  text-decoration-style: solid;
+  text-decoration-thickness: auto;
+  text-size-adjust: 100%;
+  width: 165.59px;
 }
 
 .metric-card {
