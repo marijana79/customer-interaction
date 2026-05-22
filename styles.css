@@ -534,13 +534,20 @@ h3 {
   align-items: center;
   justify-content: center;
   min-height: 48px;
-  padding: 0.82rem 1rem;
+  padding-top: 13.6px;
+  padding-right: 16px;
+  padding-bottom: 13.6px;
+  padding-left: 16px;
   border: 1px solid var(--black);
+  border-bottom-color: rgb(42, 38, 34);
   border-radius: 8px;
-  background: var(--white);
+  background: rgb(255, 255, 255);
   color: var(--black);
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18.9px;
   text-decoration: none;
+  text-decoration-color: rgb(42, 38, 34);
 }
 
 .metric-card {
