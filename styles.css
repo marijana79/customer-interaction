@@ -324,11 +324,8 @@ a:focus-visible {
 
 
 .topbar-search {
-  width: min(100%, 520px);
-}
-
-.topbar-search label {
-  font-size: 0.85rem;
+  flex: 1 1 auto;
+  max-width: none;
 }
 
 .topbar-search input {
